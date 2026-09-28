@@ -1,0 +1,5 @@
+PyQt5>=5.15
+akshare>=1.14
+openai>=1.0
+keyring>=24.0
+pyinstaller>=6.0
