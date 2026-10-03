@@ -1,0 +1,52 @@
+{
+  "skill": "stress-inoculation-rehearsal",
+  "version": "0.1.0",
+  "source_book": "《投资交易心理分析》 — Brett N. Steenbarger",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我每次止损都下不了手，怎么训练自己？",
+      "expected_behavior": "激活 stress-inoculation-rehearsal，开市前闭眼预演止损被触发的场景直到无停顿播完。",
+      "notes": "正面场景: 对止损场景脱敏"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我最怕隔夜持仓，一持仓就心慌，怎么办？",
+      "expected_behavior": "激活 stress-inoculation-rehearsal，预演隔夜持仓与次日开盘的最坏情形。",
+      "notes": "正面场景: 特定恐惧场景的预演"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "想提前演练一下暴跌时我该怎么应对。",
+      "expected_behavior": "激活 stress-inoculation-rehearsal，在脑海中放电影预演暴跌及应对动作。",
+      "notes": "正面场景: 主动预演最坏行情"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "止损规则我该定多少才合适？",
+      "expected_behavior": "不应激活本 skill，应激活 stop-loss-discipline（三分法止损规则）。",
+      "notes": "跨 skill 混淆诱饵: 规则设定 vs 心理预演"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "这本书第3章主要讲了什么？",
+      "expected_behavior": "不应激活任何心理训练 skill（纯信息查询）。",
+      "notes": "诱饵: 信息查询"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我一想到会亏钱就手心出汗，这是正常的吗？",
+      "expected_behavior": "边界判断: 属于条件化恐惧反应，可激活本 skill 做渐进预演；若伴随强烈生理反应且影响生活，应提示专业支持。",
+      "notes": "边界: 恐惧反应的自我训练边界"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "至少 3 条 should_trigger + 2 条 should_not_trigger + 1 条 edge_case。全部 should_not_trigger 必须通过，且其中至少 1 条为同书兄弟 skill 场景。"
+}

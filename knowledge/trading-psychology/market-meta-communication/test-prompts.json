@@ -1,0 +1,52 @@
+{
+  "skill": "market-meta-communication",
+  "version": "0.1.0",
+  "source_book": "《投资交易心理分析》 — Brett N. Steenbarger",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "指数创新高但只有少数股票创新高，怎么解读？",
+      "expected_behavior": "激活 market-meta-communication，读广度元信息——广度不足=脆弱/假突破。",
+      "notes": "正面场景: 广度元信息"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "这波突破是真是假？",
+      "expected_behavior": "激活 market-meta-communication，用效率/广度/期望落空/同步性四信号判断突破真假。",
+      "notes": "正面场景: 真假突破判断"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "怎么判断趋势健不健康？",
+      "expected_behavior": "激活 market-meta-communication，用元信息（效率下降/广度不足/期望落空）评估趋势健康度。",
+      "notes": "正面场景: 趋势健康度"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我总觉得市场要见顶了，是不是该反着做？",
+      "expected_behavior": "不应激活本 skill（是行动策略选择），应激活 contrarian-pinball-edge（逆向交易）。",
+      "notes": "跨 skill 混淆诱饵: 解读 vs 行动"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "帮我算一下20日均线是多少。",
+      "expected_behavior": "不应激活本 skill（指标计算，非元信息解读）。",
+      "notes": "诱饵: 指标计算"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我看到了背离，但不确定算不算有效信号。",
+      "expected_behavior": "边界判断: 激活本 skill——背离是元信息信号，但应引导结合统计验证与背景（趋势阶段/量能）再定性。",
+      "notes": "边界: 背离的有效性"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "至少 3 条 should_trigger + 2 条 should_not_trigger + 1 条 edge_case。全部 should_not_trigger 必须通过，且其中至少 1 条为同书兄弟 skill 场景。"
+}

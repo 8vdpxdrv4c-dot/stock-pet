@@ -1,6 +1,5 @@
 """Windows 自检脚本：确认环境、网络、key 都 OK。用法：python self_check.py"""
 import sys
-import time
 
 
 def hr(title=""):
@@ -36,10 +35,6 @@ def _import_pyqt():
     from PyQt5.QtCore import QT_VERSION_STR
     return QT_VERSION_STR
 check("PyQt5", _import_pyqt)
-def _import_ak():
-    import akshare as ak
-    return ak.__version__
-check("akshare", _import_ak)
 def _import_openai():
     import openai
     return openai.__version__
@@ -70,16 +65,6 @@ def _deepseek():
         return "API Key 有效"
     raise RuntimeError(f"HTTP {r.status_code}: {r.text[:200]}")
 check("DeepSeek API", _deepseek)
-
-hr("5. 大盘数据接口")
-def _market():
-    import stock_data
-    t = time.time()
-    snap = stock_data.get_market_snapshot()
-    if snap is None:
-        raise RuntimeError("两个数据源都失败了")
-    return f"{snap}  ({time.time()-t:.1f}s)"
-check("大盘涨跌家数", _market)
 
 hr()
 print(f"通过 {ok} 项，失败 {fail} 项")

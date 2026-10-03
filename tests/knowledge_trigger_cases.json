@@ -1,0 +1,119 @@
+[
+  {
+    "question": "激励机制怎么设计",
+    "expected": "incentive-analysis",
+    "max_rank": 1
+  },
+  {
+    "question": "为什么制度改了但行为没变",
+    "expected": "incentive-analysis",
+    "max_rank": 1
+  },
+  {
+    "question": "为什么员工只顾完成指标，却不在乎客户体验？",
+    "expected": "incentive-analysis",
+    "max_rank": 1
+  },
+  {
+    "question": "舍不得止损，已经套住了",
+    "expected": "stop-loss-discipline"
+  },
+  {
+    "question": "亏损一直扛着，不愿意割肉怎么办",
+    "expected": "stop-loss-discipline"
+  },
+  {
+    "question": "怎么判断一家公司的估值",
+    "expected": "dcf-valuation"
+  },
+  {
+    "question": "投资时如何确定自己的能力圈",
+    "expected": "capability-circle"
+  },
+  {
+    "question": "长期复利为什么重要",
+    "expected": "compounding-thinking"
+  },
+  {
+    "question": "怎么判断一家企业有没有护城河",
+    "expected": "economic-moat"
+  },
+  {
+    "question": "借钱加杠杆买股票有哪些风险",
+    "expected": "no-leverage"
+  },
+  {
+    "question": "买入之前怎么考虑机会成本",
+    "expected": "opportunity-cost"
+  },
+  {
+    "question": "止损以后情绪很痛苦，怎么提前做心理演练",
+    "expected": "stress-inoculation-rehearsal",
+    "max_rank": 1
+  },
+  {
+    "question": "今天吃什么",
+    "expected": null
+  },
+  {
+    "question": "帮我画一只猫",
+    "expected": null
+  },
+  {
+    "question": "数据库连接失败怎么排查",
+    "expected": null
+  },
+  {
+    "question": "2026-04-15 v1 A1",
+    "expected": null
+  },
+  {
+    "question": "一个问题需要怎么设计处理",
+    "expected": null
+  },
+  {
+    "question": "你好",
+    "expected": null
+  },
+  {
+    "question": "团队只看KPI，却忽略服务质量",
+    "expected": "incentive-analysis",
+    "max_rank": 1
+  },
+  {
+    "question": "员工只追指标，完全不在乎客户体验",
+    "expected": "incentive-analysis",
+    "max_rank": 1
+  },
+  {
+    "question": "奖金制度如何避免销售忽略售后服务",
+    "expected": "incentive-analysis",
+    "max_rank": 1
+  },
+  {
+    "question": "开盘前心里没底，想先做心理排练",
+    "expected": "stress-inoculation-rehearsal",
+    "max_rank": 1
+  },
+  {
+    "question": "怎样预演面对交易亏损的反应",
+    "expected": "stress-inoculation-rehearsal",
+    "max_rank": 1
+  },
+  {
+    "question": "软件安装失败怎么排查",
+    "expected": null
+  },
+  {
+    "question": "数据库连接超时怎么办",
+    "expected": null
+  },
+  {
+    "question": "客户体验怎么提升",
+    "expected": null
+  },
+  {
+    "question": "服务器压力测试失败",
+    "expected": null
+  }
+]

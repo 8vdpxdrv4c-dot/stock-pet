@@ -1,0 +1,59 @@
+{
+  "skill": "fearless-trading-inventory",
+  "version": "0.1.0",
+  "source_book": "《投资交易心理分析》 — Brett N. Steenbarger",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "帮我复盘一下我这一年的交易，我总是一赚钱就亏回去。",
+      "expected_behavior": "激活 fearless-trading-inventory，收集交易历史并逐笔对照找五个维度的不一致（仓位/准备/执行/角度/清仓）。",
+      "notes": "正面场景: 系统性复盘交易历史"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我连续三个月稳定亏钱，每笔交易都有理由，问题到底在哪？",
+      "expected_behavior": "激活 fearless-trading-inventory，用清单审查执行一致性，而不是先怪策略。",
+      "notes": "正面场景: '每笔都有理由仍亏'——一致性缺口的典型信号"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我有交易日志，能帮我看看我的交易是不是不够一致吗？",
+      "expected_behavior": "激活 fearless-trading-inventory，分析日志找模式并给一致性打分。",
+      "notes": "正面场景: 有日志想查一致性"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我刚止损完，心里很难受，怎么调整状态？",
+      "expected_behavior": "不应激活 fearless-trading-inventory，应激活 emotional-temperature-gate（当前状态管理）。",
+      "notes": "跨 skill 混淆诱饵: 当前情绪处理 vs 历史复盘"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "这个股票今天怎么操作，买还是卖？",
+      "expected_behavior": "不应激活本 skill（不是复盘场景，是单笔操作咨询）。",
+      "notes": "诱饵: 操作咨询"
+    },
+    {
+      "id": "should-not-trigger-03",
+      "type": "should_not_trigger",
+      "prompt": "我的交易系统很完善，但每次实盘都执行不了，是不是心态问题？",
+      "expected_behavior": "不应激活 fearless-trading-inventory，应激活 trading-personality-match（结构/性格诊断）。",
+      "notes": "跨 skill 混淆诱饵: 执行不了优先做性格-方法匹配诊断"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我只有5笔交易记录，能帮我复盘找问题吗？",
+      "expected_behavior": "边界判断: 样本不足（<10笔），应引导先建立六要素日志机制，两周后再回来复盘，而不是强行找模式。",
+      "notes": "边界: 样本量不足的复盘"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "至少 3 条 should_trigger + 2 条 should_not_trigger + 1 条 edge_case。全部 should_not_trigger 必须通过，且其中 2 条为同书兄弟 skill 场景。"
+}

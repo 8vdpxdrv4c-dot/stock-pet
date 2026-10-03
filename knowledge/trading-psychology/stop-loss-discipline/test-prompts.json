@@ -1,0 +1,52 @@
+{
+  "skill": "stop-loss-discipline",
+  "version": "0.1.0",
+  "source_book": "《投资交易心理分析》 — Brett N. Steenbarger",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我怎么设止损才不会老被扫掉？",
+      "expected_behavior": "激活 stop-loss-discipline，给出价格/指标/时间三分法止损规则。",
+      "notes": "正面场景: 三分法止损"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我又死扛了，把短线扛成了中线。",
+      "expected_behavior": "激活 stop-loss-discipline，把止损重新定义为'假设被证伪'，并给出防止死扛的规则。",
+      "notes": "正面场景: 死扛的反省"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "止损好痛，每次割肉都像承认自己失败了。",
+      "expected_behavior": "激活 stop-loss-discipline，进行'失败即成本'的心态转换，把止损当作做生意的成本。",
+      "notes": "正面场景: 失败即成本"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我知道止损规则，但就是不敢执行，怎么训练？",
+      "expected_behavior": "不应激活本 skill（规则已有），应激活 stress-inoculation-rehearsal（预演止损场景）。",
+      "notes": "跨 skill 混淆诱饵: 规则 vs 预演"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我现在这个仓位今天该不该平掉？",
+      "expected_behavior": "不应激活本 skill（单笔仓位决策不是止损规则设计）。",
+      "notes": "诱饵: 单笔交易决策"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "时间止损是不是只适合日内交易？",
+      "expected_behavior": "边界判断: 激活本 skill——说明时间止损是作者最爱但其时间窗需按交易周期（日内/波段/长线）重新设计。",
+      "notes": "边界: 时间止损的周期适配"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "至少 3 条 should_trigger + 2 条 should_not_trigger + 1 条 edge_case。全部 should_not_trigger 必须通过，且其中至少 1 条为同书兄弟 skill 场景。"
+}

@@ -1,0 +1,52 @@
+{
+  "skill": "trigger-and-trading-coach",
+  "version": "0.1.0",
+  "source_book": "《投资交易心理分析》 — Brett N. Steenbarger",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我一亏就上头，控制不住想加仓翻本，怎么办？",
+      "expected_behavior": "激活 trigger-and-trading-coach，识别触发器（亏损事件）→ 辨识消极磁带 → 以交易教练口吻替换。",
+      "notes": "正面场景: 触发-磁带-教练完整链"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "每次错过机会我就想追高，怎么打断这个习惯？",
+      "expected_behavior": "激活 trigger-and-trading-coach，先识别'错过机会'触发器及其自动反应，再设计打断动作。",
+      "notes": "正面场景: 具体触发情境失控"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我脑子里有个声音一直说我做不了交易。",
+      "expected_behavior": "激活 trigger-and-trading-coach，辨识消极自我对话磁带，用教练台词替换。",
+      "notes": "正面场景: 消极自我对话"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我这个坏习惯反复复发，怎么彻底改掉？",
+      "expected_behavior": "不应激活本 skill（单次打断不够），应激活 novelty-change-consolidation（新意+巩固的长期机制）。",
+      "notes": "跨 skill 混淆诱饵: 长期改变机制 vs 单次打断"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我总觉得交易没意思，是不是该退出？",
+      "expected_behavior": "不应激活本 skill（生涯/动机问题，非触发器链）。",
+      "notes": "诱饵: 动机与生涯问题"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "复盘时我发现自己一亏就上头，这算触发器吗？",
+      "expected_behavior": "边界判断: 算——激活本 skill 但说明触发器识别应在事件发生当时做（盘中），复盘只能事后重建；建议结合日志记录现场。",
+      "notes": "边界: 事后重建触发器"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "至少 3 条 should_trigger + 2 条 should_not_trigger + 1 条 edge_case。全部 should_not_trigger 必须通过，且其中至少 1 条为同书兄弟 skill 场景。"
+}

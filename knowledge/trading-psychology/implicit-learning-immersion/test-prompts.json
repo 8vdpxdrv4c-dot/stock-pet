@@ -1,0 +1,52 @@
+{
+  "skill": "implicit-learning-immersion",
+  "version": "0.1.0",
+  "source_book": "《投资交易心理分析》 — Brett N. Steenbarger",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我读了很多书还是没盘感，正常吗？",
+      "expected_behavior": "激活 implicit-learning-immersion，解释内隐学习需1000+试验+即时反馈，书是显性知识，给出沉浸式练习方案。",
+      "notes": "正面场景: 懂而不会=试验不足"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "盘感怎么练？",
+      "expected_behavior": "激活 implicit-learning-immersion，设计模拟盘+改变环境+重复的练习计划。",
+      "notes": "正面场景: 技能获取路径"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "模拟盘到底有没有用，怎么用才有效？",
+      "expected_behavior": "激活 implicit-learning-immersion，把模拟盘定位为刻意练习场，给出使用原则。",
+      "notes": "正面场景: 模拟盘的正确用法"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我按计划做了还是亏，是不是方法错了？",
+      "expected_behavior": "不应激活本 skill（是执行/方法评估），应激活 trading-personality-match 或先做 fearless-trading-inventory 复盘。",
+      "notes": "跨 skill 混淆诱饵: 执行评估 vs 技能训练"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "帮我解释一下什么是成交量。",
+      "expected_behavior": "不应激活本 skill（知识查询，非技能训练）。",
+      "notes": "诱饵: 概念解释"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "每天练多久模拟盘才算有效训练？",
+      "expected_behavior": "边界判断: 激活本 skill——给出时间/频率建议（固定时段+目标导向），强调'刻意'比'时长'重要，且需即时反馈闭环。",
+      "notes": "边界: 练习量的设定"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "至少 3 条 should_trigger + 2 条 should_not_trigger + 1 条 edge_case。全部 should_not_trigger 必须通过，且其中至少 1 条为同书兄弟 skill 场景。"
+}

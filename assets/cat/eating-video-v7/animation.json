@@ -1,0 +1,28 @@
+{
+  "source": "../videos/eating-source-v7.mp4",
+  "source_sha256": "4e4c3005c8a340c7d25982d7724f7a24c0adb32c0c99a61383c40cfaff95def9",
+  "original_filename": "10月3日(2).mp4",
+  "frame_count": 103,
+  "source_frame_count": 109,
+  "source_frame_range": [
+    0,
+    103
+  ],
+  "fps": 30,
+  "timer_interval_ms": 33,
+  "canvas_size": [
+    360,
+    360
+  ],
+  "shared_crop": [
+    24,
+    190,
+    1049,
+    1397
+  ],
+  "padding": 8,
+  "alpha_stabilization": "loop-aware three-frame median",
+  "solid_interior": true,
+  "interior_repair": "filled silhouette; opaque interior; 3px soft outer edge; original source RGB",
+  "processing": "u2netp alpha mask; shared crop/scale; source frame order; no generated in-between frames"
+}

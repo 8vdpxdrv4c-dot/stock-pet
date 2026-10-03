@@ -30,3 +30,17 @@ Thumbs.db
 
 # PyInstaller
 *.spec
+!StockPet.spec
+
+# Local previews, logs, recovery copies and user data
+*.log
+preview*.png
+preview*.jpg
+preview*.mp4
+settings-recovery-*/
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal
+tests/*_report.json
+tests/*_report.txt
+tests/pet_ui_chat_transcript.txt

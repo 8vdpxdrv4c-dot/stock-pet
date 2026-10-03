@@ -13,7 +13,6 @@ echo [3] python 版本: & python --version
 echo [4] pip 版本: & python -m pip --version
 echo [5] 关键库:
 python -c "import PyQt5; print('  PyQt5 OK')" 2>&1
-python -c "import akshare; print('  akshare', akshare.__version__)" 2>&1
 python -c "import openai; print('  openai', openai.__version__)" 2>&1
 python -c "import keyring; print('  keyring', keyring.get_keyring().__class__.__name__)" 2>&1
 python -c "import PyInstaller; print('  PyInstaller', PyInstaller.__version__)" 2>&1

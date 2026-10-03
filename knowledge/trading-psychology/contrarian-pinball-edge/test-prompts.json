@@ -1,0 +1,52 @@
+{
+  "skill": "contrarian-pinball-edge",
+  "version": "0.1.0",
+  "source_book": "《投资交易心理分析》 — Brett N. Steenbarger",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "追突破总是被套，怎么办？",
+      "expected_behavior": "激活 contrarian-pinball-edge，识别失败突破的初期反向交易。",
+      "notes": "正面场景: 反突破思维"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "市场恐慌到5%的股票创新低了，能买吗？",
+      "expected_behavior": "激活 contrarian-pinball-edge，解释'市场最疲软时买入'的反向规则。",
+      "notes": "正面场景: 恐慌逆向"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "大家都在追这个热点，我该反着来吗？",
+      "expected_behavior": "激活 contrarian-pinball-edge，但先要求找到有统计支持的'窍门'再反向，而非无差别逆向。",
+      "notes": "正面场景: 拥挤交易的逆向"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "怎么看这波突破是不是假的？",
+      "expected_behavior": "不应激活本 skill（是解读不是行动），应激活 market-meta-communication。",
+      "notes": "跨 skill 混淆诱饵: 解读 vs 行动"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "帮我把这几笔亏损交易复盘一下。",
+      "expected_behavior": "不应激活本 skill，应激活 fearless-trading-inventory（一致性复盘）。",
+      "notes": "跨 skill 混淆诱饵: 复盘 vs 逆向策略"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "逆向交易会不会变成接飞刀？",
+      "expected_behavior": "边界判断: 激活本 skill——说明逆向需要统计验证+止损前提+趋势衰竭识别，否则确实会接飞刀。",
+      "notes": "边界: 逆向的适用边界"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "至少 3 条 should_trigger + 2 条 should_not_trigger + 1 条 edge_case。全部 should_not_trigger 必须通过，且其中至少 1 条为同书兄弟 skill 场景。"
+}

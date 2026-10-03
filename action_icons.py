@@ -1,0 +1,103 @@
+"""Small, consistent vector icons for the pet's action buttons."""
+from PyQt5.QtCore import Qt, QPoint, QRectF
+from PyQt5.QtGui import QColor, QIcon, QPainter, QPainterPath, QPen, QPixmap
+
+
+def action_icon(action):
+    pixmap = QPixmap(64, 64)
+    pixmap.fill(Qt.transparent)
+    p = QPainter(pixmap)
+    p.setRenderHint(QPainter.Antialiasing)
+    p.scale(2, 2)
+    ink = QColor("#fffaf3")
+    p.setPen(QPen(ink, 2.1, Qt.SolidLine, Qt.RoundCap, Qt.RoundJoin))
+    p.setBrush(Qt.NoBrush)
+
+    def line(x1, y1, x2, y2):
+        p.drawLine(QPoint(x1, y1), QPoint(x2, y2))
+
+    def sparkle(x, y, radius):
+        path = QPainterPath()
+        path.moveTo(x, y - radius)
+        path.lineTo(x + radius * .3, y - radius * .3)
+        path.lineTo(x + radius, y)
+        path.lineTo(x + radius * .3, y + radius * .3)
+        path.lineTo(x, y + radius)
+        path.lineTo(x - radius * .3, y + radius * .3)
+        path.lineTo(x - radius, y)
+        path.lineTo(x - radius * .3, y - radius * .3)
+        path.closeSubpath()
+        p.fillPath(path, ink)
+
+    if action == "eat":
+        bowl = QPainterPath()
+        bowl.moveTo(5, 15)
+        bowl.lineTo(27, 15)
+        bowl.quadTo(26, 26, 20, 26)
+        bowl.lineTo(12, 26)
+        bowl.quadTo(6, 26, 5, 15)
+        p.drawPath(bowl)
+        line(4, 15, 28, 15)
+        p.setBrush(ink)
+        for x, y in ((10, 11), (16, 9), (22, 11)):
+            p.drawEllipse(QRectF(x - 1.2, y - 1.2, 2.4, 2.4))
+    elif action == "sleep":
+        moon = QPainterPath()
+        moon.addEllipse(QRectF(5, 5, 21, 22))
+        cutout = QPainterPath()
+        cutout.addEllipse(QRectF(13, 2, 20, 21))
+        p.fillPath(moon.subtracted(cutout), ink)
+        sparkle(24, 6, 3)
+        sparkle(27, 16, 2)
+    elif action == "chat":
+        bubble = QPainterPath()
+        bubble.moveTo(10, 6)
+        bubble.lineTo(23, 6)
+        bubble.quadTo(28, 6, 28, 11)
+        bubble.lineTo(28, 19)
+        bubble.quadTo(28, 24, 23, 24)
+        bubble.lineTo(13, 24)
+        bubble.lineTo(7, 28)
+        bubble.lineTo(8, 23)
+        bubble.quadTo(4, 22, 4, 18)
+        bubble.lineTo(4, 11)
+        bubble.quadTo(4, 6, 10, 6)
+        p.drawPath(bubble)
+        p.setBrush(ink)
+        for x in (10, 16, 22):
+            p.drawEllipse(QRectF(x - 1, 14, 2, 2))
+    elif action == "record":
+        paper = QPainterPath()
+        paper.moveTo(26, 19)
+        paper.lineTo(26, 26)
+        paper.quadTo(26, 28, 24, 28)
+        paper.lineTo(8, 28)
+        paper.quadTo(6, 28, 6, 26)
+        paper.lineTo(6, 7)
+        paper.quadTo(6, 5, 8, 5)
+        paper.lineTo(17, 5)
+        p.drawPath(paper)
+        pencil = QPainterPath()
+        pencil.moveTo(13, 19)
+        pencil.lineTo(14, 14)
+        pencil.lineTo(25, 3)
+        pencil.lineTo(29, 7)
+        pencil.lineTo(18, 18)
+        pencil.closeSubpath()
+        p.drawPath(pencil)
+        line(22, 6, 26, 10)
+        line(11, 23, 20, 23)
+    elif action == "todo":
+        p.drawRoundedRect(QRectF(6, 6, 21, 23), 3, 3)
+        p.drawRoundedRect(QRectF(11, 3, 11, 6), 2, 2)
+        line(11, 17, 15, 21)
+        line(15, 21, 23, 13)
+    elif action == "transform":
+        line(6, 27, 22, 11)
+        line(8, 22, 11, 25)
+        sparkle(24, 8, 6)
+        sparkle(8, 9, 3)
+        sparkle(26, 24, 3)
+    p.end()
+    pixmap.setDevicePixelRatio(2)
+    return QIcon(pixmap)

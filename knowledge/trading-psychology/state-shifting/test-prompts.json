@@ -1,0 +1,52 @@
+{
+  "skill": "state-shifting",
+  "version": "0.1.0",
+  "source_book": "《投资交易心理分析》 — Brett N. Steenbarger",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我一坐交易台前就紧张到无法思考。",
+      "expected_behavior": "激活 state-shifting，检查环境触发器并执行身体换挡（起身/换姿势/拉长呼气）。",
+      "notes": "正面场景: 盘中状态失控"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "被套住了，坐不住，脑子一片空白。",
+      "expected_behavior": "激活 state-shifting，离开屏幕/调整呼吸降唤醒，恢复思考能力。",
+      "notes": "正面场景: 持仓焦虑的换挡"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "盘中心跳加速，怎么冷静下来？",
+      "expected_behavior": "激活 state-shifting，用身体状态改变情绪状态（身体与情绪是同一枚硬币的两面）。",
+      "notes": "正面场景: 身体调节"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "开市前我想预演一下最坏的情况。",
+      "expected_behavior": "不应激活本 skill（是事前预演），应激活 stress-inoculation-rehearsal。",
+      "notes": "跨 skill 混淆诱饵: 事中换挡 vs 事前预演"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我长期失眠加焦虑，有什么建议？",
+      "expected_behavior": "不应激活本 skill（长期问题需专业支持，非单次换挡）。",
+      "notes": "诱饵: 长期心理问题"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "紧张的时候深呼吸有用吗？",
+      "expected_behavior": "边界判断: 激活本 skill——深呼吸有基础作用，但要用正确节奏（拉长呼气），并说明单次深呼吸≠状态管理。",
+      "notes": "边界: 深呼吸的正确用法"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "至少 3 条 should_trigger + 2 条 should_not_trigger + 1 条 edge_case。全部 should_not_trigger 必须通过，且其中至少 1 条为同书兄弟 skill 场景。"
+}

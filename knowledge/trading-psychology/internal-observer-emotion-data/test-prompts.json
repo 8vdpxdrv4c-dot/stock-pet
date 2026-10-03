@@ -1,0 +1,52 @@
+{
+  "skill": "internal-observer-emotion-data",
+  "version": "0.1.0",
+  "source_book": "《投资交易心理分析》 — Brett N. Steenbarger",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我一交易就情绪化，怎么才能不被情绪带跑？",
+      "expected_behavior": "激活 internal-observer-emotion-data，教用户激活内部观察员、把情绪当数据而非敌人。",
+      "notes": "正面场景: 情绪化交易者想建立观察能力"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我交易时心跳加速想立刻平仓，该听它的吗？",
+      "expected_behavior": "激活 internal-observer-emotion-data，把恐慌当作'市场可能过度反应'的反向信号，先研究历史数据再决定，而非盲目平仓。",
+      "notes": "正面场景: 情绪即反向数据"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "交易时我脑子里全是负面想法，怎么处理？",
+      "expected_behavior": "激活 internal-observer-emotion-data，激活观察员抽离观察消极自我对话，把负面想法当数据标记而非真相。",
+      "notes": "正面场景: 用观察员处理自动负面想法"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我今天很亢奋，该不该开仓？",
+      "expected_behavior": "不应激活本 skill，应激活 emotional-temperature-gate（测温度决定是否交易）。",
+      "notes": "跨 skill 混淆诱饵: 测量闸门 vs 观察机制"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "帮我看看市场这波突破是不是假突破？",
+      "expected_behavior": "不应激活本 skill，应激活 market-meta-communication（读市场元信息）。",
+      "notes": "跨 skill 混淆诱饵: 读市场 vs 读自己"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "别人都说交易要冷静，可我越强迫自己冷静越亏，为什么？",
+      "expected_behavior": "边界判断: 应激活本 skill——'强迫冷静'是压制情绪，正解是把情绪当数据观察；说明反向操作逻辑。",
+      "notes": "边界: '冷静'的正确含义"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "至少 3 条 should_trigger + 2 条 should_not_trigger + 1 条 edge_case。全部 should_not_trigger 必须通过，且其中至少 1 条为同书兄弟 skill 场景。"
+}

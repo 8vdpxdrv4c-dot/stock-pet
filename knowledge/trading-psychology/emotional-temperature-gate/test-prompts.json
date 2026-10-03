@@ -1,0 +1,52 @@
+{
+  "skill": "emotional-temperature-gate",
+  "version": "0.1.0",
+  "source_book": "《投资交易心理分析》 — Brett N. Steenbarger",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "今天心情很烦躁，该不该开仓？",
+      "expected_behavior": "激活 emotional-temperature-gate，先测情绪温度（激发×效价），烦躁/低落/亢奋→不交易。",
+      "notes": "正面场景: 状态不对不交易"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我交易前怎么判断自己状态对不对？",
+      "expected_behavior": "激活 emotional-temperature-gate，教用户周期性测量情绪温度并建立行动规则。",
+      "notes": "正面场景: 建立测温习惯"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "开盘前没什么状态，是硬着头皮做还是休息？",
+      "expected_behavior": "激活 emotional-temperature-gate，测量后状态不对则离场/休息，把状态作为交易的正式组成部分。",
+      "notes": "正面场景: 开盘前状态评估"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我止损老是做不到位，怎么设止损才对？",
+      "expected_behavior": "不应激活本 skill，应激活 stop-loss-discipline（三分法止损规则）。",
+      "notes": "跨 skill 混淆诱饵: 止损规则 vs 状态闸门"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "今天大盘会涨还是会跌，帮我判断一下？",
+      "expected_behavior": "不应激活本 skill（市场方向预测不属于状态测温）。",
+      "notes": "诱饵: 市场方向预测"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我状态一般般，不算好也不算坏，能交易吗？",
+      "expected_behavior": "边界判断: 激活本 skill——处于适区边缘，应测量后决定；可交易但建议降低仓位，并设置盘中二次测温。",
+      "notes": "边界: 适区边缘的状态"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "至少 3 条 should_trigger + 2 条 should_not_trigger + 1 条 edge_case。全部 should_not_trigger 必须通过，且其中至少 1 条为同书兄弟 skill 场景。"
+}

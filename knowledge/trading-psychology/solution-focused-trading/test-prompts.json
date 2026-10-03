@@ -1,0 +1,52 @@
+{
+  "skill": "solution-focused-trading",
+  "version": "0.1.0",
+  "source_book": "《投资交易心理分析》 — Brett N. Steenbarger",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我总在亏损后报复性交易，怎么戒掉？",
+      "expected_behavior": "激活 solution-focused-trading，不深挖病因，改为找'亏损后没有报复交易'的例外时刻并分析其条件。",
+      "notes": "正面场景: 找例外替代纠错"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我想知道我有没有做对过的时候，想找到并放大它。",
+      "expected_behavior": "激活 solution-focused-trading，从交易历史中提取成功/正常执行的例外模板。",
+      "notes": "正面场景: 明确想找特例放大"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我想改掉过度交易的毛病，但不想只知道毛病在哪。",
+      "expected_behavior": "激活 solution-focused-trading，聚焦于'何时我不过度交易'的例外并延长它。",
+      "notes": "正面场景: 不想只纠错，想放大有效部分"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "帮我找出我交易里不一致的地方，我想知道哪里前后不一。",
+      "expected_behavior": "不应激活 solution-focused-trading，应激活 fearless-trading-inventory（找不一致缺口）。",
+      "notes": "跨 skill 混淆诱饵: 找缺口 vs 找例外"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "今天心情很烦躁，该不该开仓？",
+      "expected_behavior": "不应激活本 skill，应激活 emotional-temperature-gate（状态测温）。",
+      "notes": "跨 skill 混淆诱饵: 当前状态判断"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我最近几乎没交易，怎么用'找特例'这个方法？",
+      "expected_behavior": "边界判断: 无交易样本时，应把范围扩展到'近期做得好的任何决策/行为'收集例外，或先记录几周交易再说。",
+      "notes": "边界: 样本不足时的例外收集"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "至少 3 条 should_trigger + 2 条 should_not_trigger + 1 条 edge_case。全部 should_not_trigger 必须通过，且其中至少 1 条为同书兄弟 skill 场景。"
+}

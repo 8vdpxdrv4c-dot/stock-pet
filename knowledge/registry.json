@@ -1,0 +1,1511 @@
+{
+  "version": 4,
+  "sources": [
+    {
+      "id": "poor-charlies-almanack",
+      "name": "穷查理宝典",
+      "source": "https://github.com/kangarooking/poor-charlies-almanack-skill"
+    },
+    {
+      "id": "buffett-letters",
+      "name": "巴菲特致股东信",
+      "source": "https://github.com/kangarooking/buffett-letters-skill"
+    },
+    {
+      "id": "duan-yongping",
+      "name": "段永平投资与商业逻辑",
+      "source": "https://github.com/kangarooking/duan-yongping-skill",
+      "commit": "4498bed"
+    }
+  ],
+  "entries": {
+    "buffett-letters/aesop-three-questions/SKILL.md": {
+      "title": "伊索三问 / 内在价值评估",
+      "description": "用户需要评估一个资产/投资/项目的价值，或纠结某个东西\"值不值\"时。适用于任何能产生（或不产生）现金流的资产评估。 语言信号：\"这个值多少钱\"/\"这只股票贵不贵\"/\"这个项目值不值得投\"/\"应该用PE还是PB估值\" 不适用于：不需要估值分析的纯情感/审美决策。",
+      "enabled": true,
+      "char_count": 2579,
+      "keywords": [
+        "valuation",
+        "intrinsic-value",
+        "dcf",
+        "aesop",
+        "价值",
+        "伊索"
+      ],
+      "triggers": [],
+      "digest": "82c0627e87c49b4cd0a3ffee3af6c980572c071336ac7854e7848c5b6ac0e4f5",
+      "stamp": [
+        1785728323186499000,
+        4821,
+        1790928352851253200
+      ]
+    },
+    "buffett-letters/business-picker/SKILL.md": {
+      "title": "做生意不做股票",
+      "description": "用户在分析股票或投资机会时，需要用\"买企业\"而非\"买股票\"的视角来评估。 语言信号：\"这只股票技术面怎么样\"/\"股价会涨吗\"/\"应该买什么股票\" 不适用于：纯粹的企业经营管理问题（不涉及估值时）。",
+      "enabled": true,
+      "char_count": 1762,
+      "keywords": [
+        "business-analysis",
+        "fundamental",
+        "做生意",
+        "做股票"
+      ],
+      "triggers": [],
+      "digest": "88c7c2b32c6afdd3d7b974361ca6c798f26d21e1affbe52a43cfcefb122cade7",
+      "stamp": [
+        1785728323187003900,
+        3184,
+        1790928352853256900
+      ]
+    },
+    "buffett-letters/ceo-as-risk-officer/SKILL.md": {
+      "title": "CEO = 首席风险官（含诺亚法则）",
+      "description": "用户在分析企业风险管理、CEO职责边界，或评估组织是否真正重视风险控制时。 语言信号:\"风险管理应该谁来管\"/\"为什么要CEO亲自管风险\"/\"风控部门不够吗\"/\"CEO最大的责任是什么\" 不适用于:不涉及组织风险管理的纯投资分析。",
+      "enabled": true,
+      "char_count": 1479,
+      "keywords": [
+        "risk-management",
+        "ceo",
+        "governance",
+        "preparedness",
+        "法则",
+        "诺亚",
+        "风险",
+        "首席"
+      ],
+      "triggers": [],
+      "digest": "470f2003c6b2f5fdb943f6d39dac3d4fcb86b24c11993031d78f027da7f2c007",
+      "stamp": [
+        1785728323189280000,
+        2845,
+        1790928352854483500
+      ]
+    },
+    "buffett-letters/cigar-butt-vs-great-business/SKILL.md": {
+      "title": "雪茄蒂 vs 伟大企业",
+      "description": "用户在选择投资标的或商业模式时，纠结于\"便宜买差企业\"还是\"合理价买好企业\"。 语言信号:\"这个便宜能不能捡\"/\"估值低是不是就值得买\"/\"贵的好公司值不值得买\"/\"便宜货有什么问题\" 不适用于:已有明确投资方法论且不需要在两种风格间做选择的场景。",
+      "enabled": true,
+      "char_count": 1921,
+      "keywords": [
+        "quality-vs-price",
+        "cigar-butt",
+        "business-quality",
+        "evolution",
+        "vs",
+        "伟大",
+        "雪茄"
+      ],
+      "triggers": [],
+      "digest": "703294be6fa147fc8a895d691e62869bfaaf88cef883fad232cfd6bdef32c1e4",
+      "stamp": [
+        1785728323190838600,
+        3743,
+        1790928352855482700
+      ]
+    },
+    "buffett-letters/circle-of-competence/SKILL.md": {
+      "title": "能力圈判断",
+      "description": "用户在做决策时不确定自己是否真的理解某个领域，或准备进入一个看似熟悉但缺乏验证记录的领域时。 语言信号：\"我觉得我懂这个行业\"/\"这个看起来很简单\"/\"别人都在投这个\"/\"我来研究一下这个新领域\" 不适用于：纯信息查询、日常琐事选择、用户已有充分专业知识的领域。",
+      "enabled": true,
+      "char_count": 2769,
+      "keywords": [
+        "decision",
+        "circle-of-competence",
+        "self-awareness",
+        "能力"
+      ],
+      "triggers": [],
+      "digest": "a34c578f706b63060cee6a6515be7f6f434543a898681b4f07e15b0f83fb5d77",
+      "stamp": [
+        1785728323191346000,
+        5469,
+        1790928352857051700
+      ]
+    },
+    "buffett-letters/compounding-thinking/SKILL.md": {
+      "title": "复利思维",
+      "description": "用户在做长期投资/储蓄/增长决策，需要理解时间和复利的力量，或被短期波动困扰时。 语言信号:\"持有多久合适\"/\"年化X%十年后会怎样\"/\"为什么长期持有比频繁交易好\"/\"小收益怎么变成大财富\" 不适用于:短期交易决策、不需要时间维度的分析。",
+      "enabled": true,
+      "char_count": 1731,
+      "keywords": [
+        "compounding",
+        "long-term",
+        "patience",
+        "time",
+        "复利",
+        "思维"
+      ],
+      "triggers": [],
+      "digest": "6f43637240ff1f0bb175954443b4a10d2a23bd598a490f3f1891175a3c3a01b0",
+      "stamp": [
+        1785728323191346000,
+        3008,
+        1790928352858059900
+      ]
+    },
+    "buffett-letters/economic-moat/SKILL.md": {
+      "title": "经济商誉 / 护城河识别",
+      "description": "用户需要评估一个企业的长期竞争力和定价权——它能否在极少额外资本下持续增长利润。 语言信号：\"这个公司有护城河吗\"/\"竞争优势在哪里\"/\"为什么这个公司能长期赚钱\"/\"品牌值多少钱\" 不适用于：纯粹的行业分析（不涉及单个企业竞争力评估时）。",
+      "enabled": true,
+      "char_count": 2006,
+      "keywords": [
+        "moat",
+        "economic-goodwill",
+        "franchise",
+        "商誉",
+        "护城河",
+        "经济",
+        "识别"
+      ],
+      "triggers": [],
+      "digest": "218939a859dce41f3f59bb02c9faacbbd48dee59e13fac65f37a40bc18d4ff03",
+      "stamp": [
+        1785728323192359400,
+        3656,
+        1790928352859057600
+      ]
+    },
+    "buffett-letters/fear-and-greed/SKILL.md": {
+      "title": "恐惧与贪婪逆向",
+      "description": "用户面对市场极端情绪时需要做出逆向来决策。当所有人都在买入/卖出、市场处于极端乐观/悲观时。 语言信号：\"所有人都在赚钱\"/\"这次不一样\"/\"市场要崩了要不要全卖\"/\"再不买就来不及了\" 不适用于：正常市场环境下的投资决策、纯基本面分析。",
+      "enabled": true,
+      "char_count": 1968,
+      "keywords": [
+        "behavioral",
+        "contrarian",
+        "greed",
+        "fear",
+        "market-extremes",
+        "恐惧",
+        "贪婪",
+        "逆向"
+      ],
+      "triggers": [],
+      "digest": "f73778d65651bb585cba8ec5a4ca35ca9667e8d52165eae3677969b37f9cf155",
+      "stamp": [
+        1785728323193243000,
+        3840,
+        1790928352861057800
+      ]
+    },
+    "buffett-letters/first-law-of-capital-allocation/SKILL.md": {
+      "title": "资本配置第一法则",
+      "description": "用户在做资本配置决策：回购、分红、收购、再投资。关键判断\"这个行动在当前价格下是聪明还是愚蠢\"。 语言信号：\"公司要回购股票\"/\"应该分红还是再投资\"/\"这个收购价格合理吗\"/\"留存收益能不能创造价值\" 不适用于：不涉及价格的纯经营决策。",
+      "enabled": true,
+      "char_count": 1692,
+      "keywords": [
+        "capital-allocation",
+        "price",
+        "buyback",
+        "dividend",
+        "法则",
+        "资本",
+        "配置"
+      ],
+      "triggers": [],
+      "digest": "657c5158154001725500b67c1597bfca4ab03f953c6567af9b41baa35a9888a0",
+      "stamp": [
+        1785728323193765800,
+        3158,
+        1790928352862058300
+      ]
+    },
+    "buffett-letters/float-thinking/SKILL.md": {
+      "title": "浮存金思维",
+      "description": "用户在寻找低成本杠杆替代方案，或分析\"先收钱后提供服务\"的商业模式的财务优势时。 语言信号:\"有没有低成本的资金来源\"/\"预付款模式有什么好处\"/\"保险公司的商业模式\"/\"如何用别人的钱投资\" 不适用于:不需要融资/杠杆分析的纯经营决策。",
+      "enabled": true,
+      "char_count": 1679,
+      "keywords": [
+        "float",
+        "insurance",
+        "leverage",
+        "low-cost-capital",
+        "思维"
+      ],
+      "triggers": [],
+      "digest": "46e493e6ea4221aad6bc08a4b652d72af9a8704788f90f32007c9036f04e358c",
+      "stamp": [
+        1785728323194336800,
+        3079,
+        1790928352862997300
+      ]
+    },
+    "buffett-letters/hold-forever/SKILL.md": {
+      "title": "永久持有",
+      "description": "用户在考虑是否卖出持仓、评估持有期限，或纠结于\"何时卖出\"时。 语言信号:\"什么时候该卖\"/\"持有多久合适\"/\"已经涨了要不要卖\"/\"什么时候止盈\" 不适用于:短期交易决策或投机性持仓的卖出判断。",
+      "enabled": true,
+      "char_count": 1650,
+      "keywords": [
+        "long-term",
+        "holding",
+        "patience",
+        "sell-discipline",
+        "持有"
+      ],
+      "triggers": [],
+      "digest": "df634a46e7e2ddcec849441008776d3efbd353d95115cae0e24f2e988ae9458e",
+      "stamp": [
+        1785728323195214100,
+        2992,
+        1790928352864003100
+      ]
+    },
+    "buffett-letters/institutional-imperative/SKILL.md": {
+      "title": "机构强制力",
+      "description": "用户在分析管理层决策、公司治理问题，或发现自己/组织在做\"因为别人都这样做\"的决策时。 语言信号:\"为什么CEO做这么蠢的决定\"/\"同行都在这样做\"/\"董事会怎么不管\"/\"大公司为什么收购失败\" 不适用于:不涉及组织决策的纯个人选择。",
+      "enabled": true,
+      "char_count": 1674,
+      "keywords": [
+        "corporate-governance",
+        "management",
+        "groupthink",
+        "强制力",
+        "机构"
+      ],
+      "triggers": [],
+      "digest": "aa2288e7509859cfe901e946186cdf38d30dc1c46191d7577a9d8db6cde8837a",
+      "stamp": [
+        1785728323195907000,
+        3004,
+        1790928352865002700
+      ]
+    },
+    "buffett-letters/look-through-earnings/SKILL.md": {
+      "title": "透视盈余（含所有者收益/反EBITDA）",
+      "description": "用户需要看穿会计数字，理解一个企业或投资组合的真实经济收益。特别适用于评估盈利质量、资本支出真实性、EBITDA误导。 语言信号:\"这家公司利润很高\"/\"EBITDA是多少\"/\"折旧算不算成本\"/\"自由现金流和利润为什么不一样\" 不适用于:不需要财务分析的纯定性决策。",
+      "enabled": true,
+      "char_count": 1811,
+      "keywords": [
+        "accounting",
+        "earnings",
+        "ebitda",
+        "owner-earnings",
+        "financial-analysis",
+        "收益",
+        "盈余",
+        "透视"
+      ],
+      "triggers": [],
+      "digest": "024df3abc8be1e9d457cd2969dafedbae3baae493ce67a9a0e6b067d2b8537d9",
+      "stamp": [
+        1785728323196310100,
+        3299,
+        1790928352867028200
+      ]
+    },
+    "buffett-letters/margin-of-safety/SKILL.md": {
+      "title": "安全边际",
+      "description": "用户准备做出一个重大决策（投资/收购/承诺），需要评估下行保护是否充足时。或在估值不确定时决定是否行动。 语言信号：\"这个价格够不够低\"/\"万一判断错了怎么办\"/\"我能承受多少亏损\"/\"下行空间有多大\" 不适用于：日常低风险决策、纯上行分析（不关心下行保护时）。",
+      "enabled": true,
+      "char_count": 1906,
+      "keywords": [
+        "decision",
+        "margin-of-safety",
+        "downside-protection",
+        "risk",
+        "安全",
+        "边际"
+      ],
+      "triggers": [],
+      "digest": "1be94246447b2a8efabe5b83989ff77979e656175bc6d5a571d92e63bd6fcfe2",
+      "stamp": [
+        1785728323197359100,
+        3560,
+        1790928352868567700
+      ]
+    },
+    "buffett-letters/mr-market/SKILL.md": {
+      "title": "市场先生思维（含投票机vs称重机）",
+      "description": "用户在市场波动中情绪受到影响，或试图从市场价格变动中获取信息而非从企业分析中获取信息时。 语言信号：\"市场在跌，是不是该卖\"/\"大家都在买\"/\"这只股票涨了很多，一定有道理\" 不适用于：纯粹的企业基本面分析（不含市场价格判断的场景）。",
+      "enabled": true,
+      "char_count": 2854,
+      "keywords": [
+        "behavioral",
+        "market-psychology",
+        "mr-market",
+        "graham",
+        "vs",
+        "先生",
+        "市场",
+        "思维",
+        "投票",
+        "重机"
+      ],
+      "triggers": [],
+      "digest": "eb6e90c0c3936dda7d6a964ee45ed98a9f9b5d9545dd96692c4092c02e4a7230",
+      "stamp": [
+        1785728323198100300,
+        5388,
+        1790928352869572500
+      ]
+    },
+    "buffett-letters/never-issue-shares/SKILL.md": {
+      "title": "不用股票收购",
+      "description": "用户在评估收购方式、股权稀释问题，或考虑用自家股票作为支付手段时。 语言信号:\"用股票收购好不好\"/\"股权稀释怎么办\"/\"现金收购vs股票收购\"/\"为什么要用现金不用股票\" 不适用于:不涉及股权支付/稀释的纯现金交易决策。",
+      "enabled": true,
+      "char_count": 1755,
+      "keywords": [
+        "acquisition",
+        "dilution",
+        "shares",
+        "capital-allocation",
+        "收购",
+        "股票"
+      ],
+      "triggers": [],
+      "digest": "ab621a87c261884d765bc32b2327e4fa4581fed22f96e6e9eef882b9360b4312",
+      "stamp": [
+        1785728323198703000,
+        3329,
+        1790928352870076100
+      ]
+    },
+    "buffett-letters/no-leverage/SKILL.md": {
+      "title": "不用杠杆 / 财务堡垒",
+      "description": "用户考虑使用杠杆（保证金/贷款/融资）来放大投资回报，或评估财务安全性时。 语言信号:\"要不要加杠杆\"/\"用保证金买\"\"贷款投资划算吗\"/\"融资利率很低应该借钱投吗\" 不适用于:不涉及杠杆/融资的纯经营决策。",
+      "enabled": true,
+      "char_count": 1569,
+      "keywords": [
+        "leverage",
+        "risk",
+        "margin",
+        "financial-safety",
+        "堡垒",
+        "杠杆",
+        "财务"
+      ],
+      "triggers": [],
+      "digest": "7e1ee9e61ca4366e2a25491ef92d791d9e27481706be8c0bf74be2c1f558b6e3",
+      "stamp": [
+        1785728323199713000,
+        2909,
+        1790928352872080700
+      ]
+    },
+    "buffett-letters/partner-with-admired/SKILL.md": {
+      "title": "只与喜欢和钦佩的人合作（含吃自己的饭）",
+      "description": "用户在选择合作伙伴、投资管理层、或评估是否应该与某人/某组织建立长期关系时。 语言信号:\"这个管理层怎么样\"/\"要不要和这个人合作\"/\"两个机会选哪个\"/\"信任怎么验证\" 不适用于:不需要长期关系评估的纯交易性决策。",
+      "enabled": true,
+      "char_count": 1646,
+      "keywords": [
+        "trust",
+        "partnership",
+        "management",
+        "alignment",
+        "合作",
+        "喜欢",
+        "钦佩"
+      ],
+      "triggers": [],
+      "digest": "c6362243d98d45b61133e2717a360e0ecbaaeeffe069d5469de148c1dc14a1e6",
+      "stamp": [
+        1785728323199713000,
+        3072,
+        1790928352873080700
+      ]
+    },
+    "buffett-letters/real-conservatism/SKILL.md": {
+      "title": "保守≠传统 / 独立思考",
+      "description": "用户在做决策时受到群体压力或主流意见影响，需要区分\"从众=安全\"和\"独立分析=真正保守\"。 语言信号:\"大家都说\"\"分析师都推荐\"/\"这是行业惯例\"/\"为什么不随大流\"/\"保守一点是不是更安全\" 不适用于:已经有独立分析支撑的决策（不需要纠偏时）。",
+      "enabled": true,
+      "char_count": 1543,
+      "keywords": [
+        "independence",
+        "conservatism",
+        "contrarian",
+        "critical-thinking",
+        "传统",
+        "保守",
+        "独立思考"
+      ],
+      "triggers": [],
+      "digest": "c963601876188d2943366eeba269e4981924b76b94407aaa7bd9bbbe8e8624d3",
+      "stamp": [
+        1785728323200712900,
+        2759,
+        1790928352874418700
+      ]
+    },
+    "buffett-letters/three-asset-categories/SKILL.md": {
+      "title": "三类投资分类法",
+      "description": "用户在评估不同资产类别（货币/黄金/房产/股票/加密等）的长期价值，或需要理解某类资产的根本经济属性时。 语言信号:\"黄金值不值得投\"/\"比特币有没有价值\"/\"房产vs股票哪个好\"/\"为什么持有现金会亏\" 不适用于:不需要跨资产类别比较的纯个股分析。",
+      "enabled": true,
+      "char_count": 1737,
+      "keywords": [
+        "asset-class",
+        "valuation",
+        "currency",
+        "productive-assets",
+        "分类法",
+        "投资"
+      ],
+      "triggers": [],
+      "digest": "c0567f2a3022e9da6153aaaa370c9a9603316a5ca3ed456336b8ed5a7447b6f7",
+      "stamp": [
+        1785728323201708700,
+        3469,
+        1790928352875418700
+      ]
+    },
+    "duan-yongping/business-model-evaluator/SKILL.md": {
+      "title": "商业模式评估：差异化→护城河→定价能力",
+      "description": "当用户需要评估一个生意/行业/公司的商业模式好坏时使用。典型触发：用户说\"这个生意值得做吗\"\"这个行业好不好赚钱\"\"这家公司有护城河吗\"\"为什么有的行业很苦却赚不到钱\"。 核心工具：差异化→护城河→定价能力的三段递推链，加上\"能涨价=有护城河\"的快速验证法。 不适用于：纯财务分析（看财报数字）、股票技术分析、个人理财建议。",
+      "enabled": true,
+      "char_count": 3463,
+      "keywords": [
+        "商业模式",
+        "差异化",
+        "护城河",
+        "定价能力",
+        "投资分析",
+        "定价",
+        "能力"
+      ],
+      "triggers": [],
+      "digest": "db10ecf38e518243ca7b9cd867fc38558aabe6f6a2609b1aa1dd7743ffda6c4a",
+      "stamp": [
+        1785748243546415100,
+        7620,
+        1790928352878418800
+      ]
+    },
+    "duan-yongping/business-stop-doing-list/SKILL.md": {
+      "title": "Stop Doing List — 不为清单构建法",
+      "description": "当用户在制定战略、做决策、或经营企业/团队时，需要一套\"不该做什么\"的排除框架。 典型触发：用户说\"我们什么都想试\"\"机会很多但不知道怎么选\"\"公司发展太快有点失控\"\"怎么避免致命错误\"。 不适用于：纯粹的任务规划（要做清单）、信息查询类问题。 核心逻辑：不做什么比做什么更重要——通过主动建立\"不为清单\"来防止致命错误。",
+      "enabled": true,
+      "char_count": 3367,
+      "keywords": [
+        "战略",
+        "排除法",
+        "不为清单",
+        "本分",
+        "长期主义",
+        "doing",
+        "list",
+        "stop",
+        "构建",
+        "清单"
+      ],
+      "triggers": [],
+      "digest": "7cbbb8270eba5f55b1658fbddbe9783e2441a4a65cdd6125f73ff938ceff394f",
+      "stamp": [
+        1785748243551508200,
+        7036,
+        1790928352879419000
+      ]
+    },
+    "duan-yongping/capability-circle/SKILL.md": {
+      "title": "能力圈决策框架（含安全边际=理解度）",
+      "description": "当用户在投资（或重大决策）场景中，对某个标的/方向产生兴趣但说不清\"我到底懂不懂它\"，或列举了一堆正面理由却无法回答\"未来5-10年它会怎样\"时，激活此 skill。关键触发信号：用户用行业经验替代商业判断、用研究时长衡量理解深度、或以\"看起来便宜\"作为买入理由。不适用于：纯信息查询、已有明确投资框架的用户寻求优化、日常小额消费决策。核心区别：能力圈≠熟悉的行业，而是\"能判断未来现金流折现的范围\"；安全边际=理解度而非价格折扣。",
+      "enabled": true,
+      "char_count": 4564,
+      "keywords": [
+        "investment",
+        "circle-of-competence",
+        "self-awareness",
+        "决策",
+        "安全",
+        "框架",
+        "能力",
+        "边际"
+      ],
+      "triggers": [],
+      "digest": "efa7f22652b625b9fe3a6c0b680ddc8845065065f915a67e0f5f355ef694280d",
+      "stamp": [
+        1785748243556145300,
+        10661,
+        1790928352881245600
+      ]
+    },
+    "duan-yongping/concentrated-investing/SKILL.md": {
+      "title": "集中投资框架",
+      "description": "当用户在讨论投资组合应该集中还是分散、仓位如何分配、持有几只股票合适时激活此skill。 典型触发信号：用户说\"我买了10只股票分散风险\"、\"这只股票我准备只放5%仓位\"、\"要不要多买几只平衡一下\"。 核心逻辑：分散是对无知的保护——如果需要分散说明对每只都不够了解；仓位大小应反映理解度而非风险分散需求。 不适用于：资金量大到单一标无法容纳、需要资产配置而非选股的理财场景、完全不懂投资的新手（这类人更适合指数基金）。 与能力圈skill区别：能力圈解决\"懂不懂\"，本skill解决\"懂了以后投多少\"。",
+      "enabled": true,
+      "char_count": 4404,
+      "keywords": [
+        "investment",
+        "portfolio",
+        "concentration",
+        "allocation",
+        "投资",
+        "框架",
+        "集中"
+      ],
+      "triggers": [],
+      "digest": "998086428cde038ef9512417dcf931cc2d683c2a93ea29eb7e6aa274ad8130cb",
+      "stamp": [
+        1785748243556145300,
+        10433,
+        1790928352881245600
+      ]
+    },
+    "duan-yongping/culture-judger/SKILL.md": {
+      "title": "企业文化判断框架",
+      "description": "当用户需要判断一家企业的企业文化好坏时使用——无论目的是投资决策、求职选择还是合作评估。典型触发：用户说\"这家公司文化怎么样\"\"怎么判断一家公司靠不靠谱\"\"值不值得加入/投资这家公司\"\"创始人/CEO怎么样\"。 核心框架：本分（做对的事情+发现错了立刻停）+ 平常心（排除干扰回归本质）+ 诚信（integrity为零容忍底线）+ 消费者导向（最终用户优先）。 不适用于：纯财务分析、短期投机决策、纯技术评估。",
+      "enabled": true,
+      "char_count": 3661,
+      "keywords": [
+        "企业文化",
+        "本分",
+        "平常心",
+        "诚信",
+        "消费者导向",
+        "人才判断",
+        "文化",
+        "框架"
+      ],
+      "triggers": [],
+      "digest": "e4c4cbff4fffee3f677f6636874d2bd6a7d36d6f76fc3beacb088abdfc7fabe2",
+      "stamp": [
+        1785748243548936100,
+        7838,
+        1790928352883657200
+      ]
+    },
+    "duan-yongping/dare-to-follow/SKILL.md": {
+      "title": "\"敢为天下后\"后发制人策略",
+      "description": "当用户在考虑是否进入一个已有竞争者的市场、或者纠结\"先发还是后发\"时使用。典型触发：用户说\"这个市场已经有很多人在做了，还值得进入吗\"\"我们应该抢占先机还是等市场成熟\"\"怎么在红海中竞争\"\"小企业怎么和大企业竞争\"。 核心逻辑：敢为天下后，前提是有差异化能力——看清市场后集中兵力精准切入。 不适用于：完全创新的蓝海市场（没有人做过，不存在\"后发\"）、纯垄断市场（无法进入）。",
+      "enabled": true,
+      "char_count": 3345,
+      "keywords": [
+        "竞争策略",
+        "后发优势",
+        "差异化",
+        "市场进入",
+        "小企业策略",
+        "后发制人",
+        "策略"
+      ],
+      "triggers": [],
+      "digest": "918bad87035a0016c017b1c9653645927d706ec19988624af011d2ca785081c7",
+      "stamp": [
+        1785748243548936100,
+        7342,
+        1790928352884166500
+      ]
+    },
+    "duan-yongping/dcf-valuation/SKILL.md": {
+      "title": "DCF思维估值法（未来现金流折现思维方式，含毛估估+封仓十年）",
+      "description": "当用户在评估一只股票\"便不便宜\"、纠结该不该基于PE/PB做买卖决策、 或试图用DCF公式精算企业价值时，激活此skill。 核心判断信号：用户提到\"估值\"\"PE多少倍\"\"DCF模型\"\"算一算值多少钱\"， 或在纠结\"这个价格能不能买\"。 此skill将估值从数学计算还原为商业判断——用\"未来现金流折现\"作为思维 方式而非公式，通过\"毛估估\"判断是否明显便宜，以\"封仓十年\"的视角检验 理解深度，用E/E替代PE以纳入负债影响。 不适用于：需要精确估值建模的场景（如并购定价）、短期交易择时、 无法产生现金流的资产（如加密货币）。",
+      "enabled": true,
+      "char_count": 4588,
+      "keywords": [
+        "investment",
+        "valuation",
+        "dcf",
+        "thinking-framework",
+        "估值",
+        "思维",
+        "折现",
+        "方式",
+        "毛估估",
+        "现金流"
+      ],
+      "triggers": [],
+      "digest": "7473cfb664a4490449f4100ac8e759d3b9ebfdb2f3771db5ca5b83b05f33f7ec",
+      "stamp": [
+        1785748243556145300,
+        10593,
+        1790928352885170500
+      ]
+    },
+    "duan-yongping/equanimity-mindset/SKILL.md": {
+      "title": "平常心投资情绪管理",
+      "description": "当投资者因股价涨跌产生焦虑、恐惧或贪婪情绪，需要回归理性决策时激活。 典型触发：股价暴跌时恐慌想卖、暴涨时焦虑要不要止盈、与他人比较收益而心态失衡、因用了非闲钱而睡不着觉。 语言信号：\"我该不该止盈\"\"跌了这么多我好慌\"\"别人赚了那么多我没赚到\"\"心跳跟着股价走\"。 不适用于：纯信息查询（问某公司财报数据）、明确的买入/卖出决策逻辑（那是能力圈或机会成本skill）、短期交易策略咨询。 与相邻skill区分：能力圈skill解决\"懂不懂\"的认知问题，本skill解决\"懂了但情绪仍然失控\"的情绪-认知断裂问题；Stop Doing List是事前纪律防线，本skill是事中情绪恢复机制。",
+      "enabled": true,
+      "char_count": 4375,
+      "keywords": [
+        "investment",
+        "mindset",
+        "emotional-management",
+        "rationality",
+        "平常心",
+        "情绪",
+        "投资",
+        "管理"
+      ],
+      "triggers": [],
+      "digest": "a5356279a297db22bf2da49eb617884e66c3a0f8919e00addf30d9bfcfc53680",
+      "stamp": [
+        1785748243557973500,
+        10306,
+        1790928352887171300
+      ]
+    },
+    "duan-yongping/good-business/SKILL.md": {
+      "title": "好生意识别法（商业模式护城河分析）",
+      "description": "当用户需要判断一家公司是否具备持久的竞争优势时激活此skill。典型触发：用户在分析某只股票/公司时问\"这门生意好不好\"\"护城河够不够深\"\"这个商业模式能不能持续赚钱\"；或用户试图从PE/财务指标出发评价一家公司却理不出头绪。 不适用于：纯财务建模（DCF计算）、已明确在能力圈外的公司（应先回能力圈框架）、短期交易择时决策。 关键语言信号：\"这个生意模式怎么样\"\"为什么这家公司能一直赚钱\"\"竞争对手能不能抢走它的市场\"。",
+      "enabled": true,
+      "char_count": 4530,
+      "keywords": [
+        "investment",
+        "business-model",
+        "moat",
+        "qualitative",
+        "商业模式",
+        "护城河",
+        "识别"
+      ],
+      "triggers": [],
+      "digest": "e004466793c208fef7eb57d3c7b27497db899b8feaaf5745995b712382f4c59f",
+      "stamp": [
+        1785748243557973500,
+        10873,
+        1790928352888170700
+      ]
+    },
+    "duan-yongping/investment-stop-doing-list/SKILL.md": {
+      "title": "Stop Doing List 投资纪律",
+      "description": "用户在投资或重大决策中面临诱惑性选择时激活：想做空被高估的股票、想加杠杆抄底、想投资\"研究过但不确定是否真懂\"的标的、频繁交易、试图通过看K线择时。 不适用于：纯信息查询（\"某公司PE多少\"）、已确定不碰的日常小事、需要正面分析方法的场景（如\"怎么分析护城河\"）。 关键触发信号：\"我觉得可以试试做空\"\"这次例外应该没问题\"\"我已经研究了一段时间应该算懂了\"\"短期做个波段\"。 本skill通过排除法（Stop Doing List）帮助用户识别并停止做错的事情，核心原则：发现错了立刻停止，不管多大代价都是最小代价。",
+      "enabled": true,
+      "char_count": 4808,
+      "keywords": [
+        "investment",
+        "discipline",
+        "exclusion-method",
+        "stop-doing",
+        "doing",
+        "list",
+        "stop",
+        "投资",
+        "纪律"
+      ],
+      "triggers": [],
+      "digest": "d2fa1bad3349302906b2dca48cffdac898464eaea9bd30e0536ce08483855171",
+      "stamp": [
+        1785748243559512300,
+        11171,
+        1790928352889171200
+      ]
+    },
+    "duan-yongping/opportunity-cost/SKILL.md": {
+      "title": "机会成本决策框架（含持有=买入）",
+      "description": "当用户纠结\"要不要卖/换/止盈/止损\"时激活。核心信号：用户用买入成本、浮盈浮亏、持仓时间作为卖出理由，或问\"已经赚了X%该不该走\"。也适用于纠结\"持有A还是换B\"的资产配置场景。不适用于：纯估值计算（交给 dcf-valuation）、判断公司好坏（交给 good-business）、情绪安抚（交给 equanimity-mindset）。本 skill 只解决一个问题——用机会成本统一买卖逻辑，消除\"成本锚定\"和\"止盈止损\"的伪决策。",
+      "enabled": true,
+      "char_count": 4103,
+      "keywords": [
+        "investment",
+        "opportunity-cost",
+        "decision-framework",
+        "buy-sell-logic",
+        "买入",
+        "决策",
+        "持有",
+        "框架"
+      ],
+      "triggers": [],
+      "digest": "eefcef6a93ab47ad423c8980a67418a57dd58941ee54cc36052ddff1db2ba611",
+      "stamp": [
+        1785748243558994200,
+        9257,
+        1790928352890170700
+      ]
+    },
+    "duan-yongping/ownership-mindset/SKILL.md": {
+      "title": "买股票就是买公司（企业所有者视角）",
+      "description": "触发：用户因股价涨跌纠结买卖、用PE/K线做判断、问\"该止盈/止损吗\"时。 语言信号：\"还能涨吗\"\"要不要止盈\"\"被套了怎么办\"\"这股票便宜\"。 核心转换：把上市公司抽象为\"只有一个股东的非上市公司\"，股价波动=别人出价，非公司价值变化。 不适用于：纯信息查询、资产配置讨论、短线策略、明确投机且不愿转变视角。 区分：DCF解决\"值多少钱\"，本skill解决\"用什么身份思考\"；opportunity-cost解决\"买或卖\"，本skill解决\"你是谁\"。",
+      "enabled": true,
+      "char_count": 4930,
+      "keywords": [
+        "investment",
+        "mindset",
+        "ownership",
+        "first-principle",
+        "股票",
+        "视角"
+      ],
+      "triggers": [],
+      "digest": "0b61e8660761a4b8787ad1ee9be7537f0bb6fbe1afc78759f5c35ffb0e95938f",
+      "stamp": [
+        1785748243559512300,
+        11547,
+        1790928352891170500
+      ]
+    },
+    "duan-yongping/profit-above-pursuit/SKILL.md": {
+      "title": "\"利润之上的追求\"企业诊断",
+      "description": "当用户需要诊断一家企业/团队的根本驱动力是否健康时使用。典型触发：用户说\"为什么这家公司短期好看长期不行\"\"怎么判断一家公司是不是真的为用户着想\"\"公司应该在利润和理想之间怎么选\"\"为什么伟大公司不追求利润却能赚最多的钱\"。 核心诊断信号：看公司面对问题时先问\"赚不赚钱\"还是先问\"这对不对\"。 不适用于：纯商业计划书写作、纯财务分析、非商业场景的道德讨论。",
+      "enabled": true,
+      "char_count": 3486,
+      "keywords": [
+        "利润之上",
+        "企业诊断",
+        "价值观",
+        "消费者导向",
+        "伟大企业",
+        "利润",
+        "诊断",
+        "追求"
+      ],
+      "triggers": [],
+      "digest": "83cb6fc9f2185e5b78c6ed33cf2d03695bb7ea7afda7dea6f9216ea92f2c99fa",
+      "stamp": [
+        1785748243548936100,
+        7715,
+        1790928352891969900
+      ]
+    },
+    "duan-yongping/right-business-people-price/SKILL.md": {
+      "title": "Right Business / Right People / Right Price 投资三要素",
+      "description": "当用户在做投资决策、评估是否买入一家公司时使用。典型触发：用户说\"这家公司值得投资吗\"\"什么时候买入\"\"估值合不合理\"\"投资最重要的是什么\"。 核心框架：Right Business（商业模式）> Right People（企业文化/管理层）> Right Price（价格），三个维度的优先级和判断逻辑。 不适用于：技术分析/短线交易、非股权类投资、纯财务建模。",
+      "enabled": true,
+      "char_count": 3473,
+      "keywords": [
+        "投资框架",
+        "商业模式",
+        "企业文化",
+        "估值",
+        "优先级",
+        "business",
+        "people",
+        "price",
+        "right",
+        "投资"
+      ],
+      "triggers": [],
+      "digest": "1ace297a6dca321c5f461b4f5498c4ada5220a66f61ccea37cd6b2be0cdc4166",
+      "stamp": [
+        1785748243551508200,
+        6922,
+        1790928352892974600
+      ]
+    },
+    "duan-yongping/right-things-first/SKILL.md": {
+      "title": "\"做对的事情\"二元决策框架",
+      "description": "当用户面临方向性决策纠结时使用——先判断方向对不对，再考虑怎么做好。典型触发：用户说\"我在纠结要不要做XX\"\"做了很久但效果不好\"\"方向对不对\"\"值不值得坚持\"\"是方向问题还是执行问题\"。 核心框架：\"做对的事情\"（方向判断，道）vs \"把事情做对\"（执行效率，术），二者不可颠倒。 不适用于：纯执行层面的问题（已经有了正确方向，只需要方法）、日常小事。",
+      "enabled": true,
+      "char_count": 3167,
+      "keywords": [
+        "决策框架",
+        "方向判断",
+        "本分",
+        "道-术二分",
+        "事情",
+        "决策",
+        "框架"
+      ],
+      "triggers": [],
+      "digest": "e2ab52254b7e382581df02d0cd9e2ef9cb1823a323c85c9f52917fc2b41af987",
+      "stamp": [
+        1785748243551508200,
+        6838,
+        1790928352894293300
+      ]
+    },
+    "poor-charlies-almanack/checklist-decision/SKILL.md": {
+      "title": "检查清单决策",
+      "description": "当用户面临重要决策且需要系统化排查遗漏、用户过度自信于自己的经验/判断力、用户是领域专家但正在处理复杂或高风险情境、或用户需要将自己的思维模型编排为可重复的决策流程时激活。典型触发信号：用户说\"我很有经验，不需要清单\"；用户在高压环境下做决策；用户承认\"事后发现遗漏了关键因素\"。不适用于简单、低风险的日常小决策或纯创意/探索性思考。",
+      "enabled": true,
+      "char_count": 3479,
+      "keywords": [
+        "系统化决策",
+        "清单方法",
+        "风险管理",
+        "强制性校准",
+        "决策",
+        "检查",
+        "清单"
+      ],
+      "triggers": [],
+      "digest": "94f45f674eca425baca99177721b57cda2670f2baa361b7bb7d72b387b938090",
+      "stamp": [
+        1785728321494064100,
+        8162,
+        1790928352900297400
+      ]
+    },
+    "poor-charlies-almanack/circle-of-competence/SKILL.md": {
+      "title": "能力圈判断 (Circle of Competence)",
+      "description": "当用户考虑进入自己不熟悉的领域做决策,或需要判断自己是否真正\"理解\"某件事时激活。典型触发信号:用户说\"我可以学\"\"应该差不多\"\"这个不难\"但缺乏相关领域的深度经验。不适用于用户已在领域内有长期成功记录且正在圈内行动的场景,也不适用于需要冒险试错才能拓展边界的早期探索阶段。",
+      "enabled": true,
+      "char_count": 4015,
+      "keywords": [
+        "能力圈",
+        "决策边界",
+        "自我认知",
+        "投资纪律",
+        "circle",
+        "competence",
+        "of",
+        "能力"
+      ],
+      "triggers": [],
+      "digest": "671350a8ce7d7c6cb2ea9fc1789bfc202c33cb4fc25c93db06d43b6984c09a13",
+      "stamp": [
+        1785728321494578100,
+        9075,
+        1790928352901296900
+      ]
+    },
+    "poor-charlies-almanack/darwinian-objectivity/SKILL.md": {
+      "title": "达尔文极端客观性方法",
+      "description": "当用户已形成强烈观点或理论,需要检验其可靠性时调用。典型触发信号:确认偏见、只看支持性证据、对新证据本能排斥、\"我觉得这肯定是对的\"、需要做重大判断前的自我审查。不适用于需要快速决策的紧急场景,也不适用于纯信息收集阶段(尚无观点时不需要证伪)。",
+      "enabled": true,
+      "char_count": 3824,
+      "keywords": [
+        "客观性",
+        "证伪思维",
+        "确认偏见",
+        "批判性思维",
+        "极端",
+        "达尔文"
+      ],
+      "triggers": [],
+      "digest": "d9241020716fcb891ddde2e4883bd0a79d9285c350439459abcf4468a41f76fa",
+      "stamp": [
+        1785728321495093100,
+        9115,
+        1790928352902800400
+      ]
+    },
+    "poor-charlies-almanack/deprival-superreaction/SKILL.md": {
+      "title": "被剥夺超级反应倾向防范",
+      "description": "当用户因失去(或即将失去)某样东西而做出不成比例的激烈反应,或在损失后急于\"扳平\"、无法止损时调用。典型触发信号:沉没成本陷阱、赌徒式加注、拍卖中的非理性竞价、无法放弃已投入大量资源的失败项目。不适用于一般的投资估值(用 value-assessment)或从众行为(用 misjudgment-checklist)。",
+      "enabled": true,
+      "char_count": 3600,
+      "keywords": [
+        "损失厌恶",
+        "沉没成本",
+        "决策偏差",
+        "止损",
+        "倾向",
+        "剥夺",
+        "反应",
+        "防范"
+      ],
+      "triggers": [],
+      "digest": "198f8c4b31dd07eab6433c205bae0234636d4d5fd0fb0aba81012b76e6f4d996",
+      "stamp": [
+        1785728321496429000,
+        8349,
+        1790928352903805200
+      ]
+    },
+    "poor-charlies-almanack/dual-track-analysis/SKILL.md": {
+      "title": "双轨分析 (Dual-Track Analysis)",
+      "description": "当用户在做重要决策时需要同时检查\"理性分析是否正确\"和\"我的判断是否被认知偏差扭曲\"时激活。典型触发信号:用户的分析逻辑严密但直觉不安,或者分析过于顺畅似乎\"毫无破绽\"。不适用于纯技术问题(如代码调试、数学计算)中不存在人类判断偏差的场景,也不适用于纯情感/人际关系问题中理性轨道不相关的场景。",
+      "enabled": true,
+      "char_count": 3795,
+      "keywords": [
+        "双轨分析",
+        "理性分析",
+        "潜意识",
+        "认知偏差防护",
+        "analysis",
+        "dual",
+        "track"
+      ],
+      "triggers": [],
+      "digest": "db479d62b20601078bf6b0fad4abd7bc6d32948173051d1199c10977d559c35b",
+      "stamp": [
+        1785728321496945600,
+        8642,
+        1790928352904805300
+      ]
+    },
+    "poor-charlies-almanack/incentive-analysis/SKILL.md": {
+      "title": "激励机制分析",
+      "description": "当用户需要理解\"为什么人们会这样做\"（尤其是看似不合理的行为）、设计管理制度或激励机制、评估专业顾问建议的可信度、试图说服他人改变行为时激活。典型触发信号：用户困惑于\"为什么制度改了但行为没变\"；用户的顾问/下属/合作方的建议恰好对他们自己特别有利；用户需要设计一个让他人按期望行事的制度。不适用于纯技术方案设计或不需要考虑人的行为的场景。",
+      "enabled": true,
+      "char_count": 3815,
+      "keywords": [
+        "激励机制",
+        "绩效考核",
+        "考核指标",
+        "奖金制度",
+        "利益冲突",
+        "奖惩制度",
+        "行为分析",
+        "组织管理",
+        "利益驱动",
+        "制度和奖励让团队行为偏离目标"
+      ],
+      "triggers": [
+        "员工只追求考核指标，不顾客户体验",
+        "员工只看KPI，却忽略服务质量",
+        "销售只为奖金冲销量，忽略售后服务",
+        "考核奖励数量，导致产品质量下降",
+        "制度和奖励让团队行为偏离目标"
+      ],
+      "digest": "265ce49b9b80ad227a4de8c695c3b0dc5ec5a093125df6fd507f0068a3a92227",
+      "stamp": [
+        1790931846370131300,
+        8836,
+        1790928352905804900
+      ]
+    },
+    "poor-charlies-almanack/inversion-thinking/SKILL.md": {
+      "title": "逆向思维 (Inversion)",
+      "description": "当用户面临复杂决策、规划或问题解决时激活——尤其是正向推理陷入困境、选项过多无法判断优先级、或需要识别隐藏风险时。典型触发信号：用户在问\"怎么才能成功\"\"如何避免失败\"\"我应该怎么做\"时卡住了。不适用于已有明确最佳路径且只需执行的简单任务,也不适用于需要创意发散而非风险规避的场景。",
+      "enabled": true,
+      "char_count": 3396,
+      "keywords": [
+        "逆向思维",
+        "决策",
+        "风险规避",
+        "失败分析",
+        "inversion",
+        "思维",
+        "逆向"
+      ],
+      "triggers": [],
+      "digest": "351d124ab537a900968e58a64488085f852bb3f807ab333f1a51937dce180426",
+      "stamp": [
+        1785728321498483500,
+        7616,
+        1790928352907431800
+      ]
+    },
+    "poor-charlies-almanack/latticework-mental-models/SKILL.md": {
+      "title": "多元思维模型框架 (Latticework of Mental Models)",
+      "description": "当用户分析复杂问题时只用了单一视角(如纯财务/纯技术/纯市场),或面对跨领域问题缺乏分析框架时激活。典型触发信号:用户说\"我只懂XX方面\"\"这个问题好像是XX问题\"但明显只用了一个学科的解释。不适用于用户已经有成熟的多维度分析框架且正在有效使用的场景,也不适用于纯执行层面的简单任务。",
+      "enabled": true,
+      "char_count": 3774,
+      "keywords": [
+        "跨学科思维",
+        "思维模型",
+        "普世智慧",
+        "铁锤人倾向",
+        "latticework",
+        "mental",
+        "models",
+        "of",
+        "思维",
+        "框架",
+        "模型"
+      ],
+      "triggers": [],
+      "digest": "a68ad44f4517fe87a4f016a3615da6add709277b6ee27197d84286bf58fd9acc",
+      "stamp": [
+        1785728321499485100,
+        8657,
+        1790928352907937800
+      ]
+    },
+    "poor-charlies-almanack/lollapalooza-effect/SKILL.md": {
+      "title": "Lollapalooza 效应识别",
+      "description": "当用户需要理解极端事件（泡沫、崩盘、群体疯狂、邪教、暴民行为）、诊断组织系统性失败、或评估多种心理/市场/制度力量同时朝一个方向叠加的风险时激活。典型触发信号：用户描述的现象\"远超任何单一因素能解释的程度\"；用户试图用单一原因解释极端结果；用户担心\"多种不利因素同时爆发\"。不适用于常规的单因素决策分析或温和的增量变化评估。",
+      "enabled": true,
+      "char_count": 3764,
+      "keywords": [
+        "极端事件",
+        "多因素交互",
+        "非线性效应",
+        "系统性风险",
+        "lollapalooza",
+        "效应",
+        "识别"
+      ],
+      "triggers": [],
+      "digest": "6b79ea073f54ad46e52b82b59c3676fe7b6ba0fc17a06bdb8b595bd983c22b99",
+      "stamp": [
+        1785728321500484600,
+        8492,
+        1790928352908942100
+      ]
+    },
+    "poor-charlies-almanack/misjudgment-psychology-checklist/SKILL.md": {
+      "title": "误判心理学检查清单",
+      "description": "当用户面临重要决策、评估他人行为、诊断群体现象或反思自身判断偏差时激活此 skill。典型触发信号：用户在做重大选择前需要排查认知陷阱；用户发现自己或他人做出了\"不合逻辑\"的行为需要解释；用户试图理解一个群体为何集体犯错。不适用于纯技术性决策（如数学计算、代码调试）或情绪安抚场景。",
+      "enabled": true,
+      "char_count": 3398,
+      "keywords": [
+        "认知偏差",
+        "心理学",
+        "决策自检",
+        "系统性偏误",
+        "检查",
+        "清单",
+        "误判"
+      ],
+      "triggers": [],
+      "digest": "24886ea4a4b43fd22de1ac3583b8bf40af8a1a2486bbca4c7b42e0e95ee6991d",
+      "stamp": [
+        1785728321501486800,
+        7416,
+        1790928352909941900
+      ]
+    },
+    "poor-charlies-almanack/scale-advantage-analysis/SKILL.md": {
+      "title": "规模优势/劣势分析",
+      "description": "当用户需要分析企业/组织/产品的竞争格局、评估\"做大\"是否真的更好、判断某公司的护城河来源是否可持续时调用。典型触发信号：涉及\"规模经济\"\"市场占有率\"\"大企业的困境\"\"先发优势\"\"网络效应\"\"赢家通吃\"等话题。不适用于纯财务分析(用 value-assessment)或纯心理偏差检查(用 misjudgment-checklist)。",
+      "enabled": true,
+      "char_count": 3258,
+      "keywords": [
+        "商业分析",
+        "规模经济",
+        "竞争优势",
+        "组织评估",
+        "优势",
+        "劣势",
+        "规模"
+      ],
+      "triggers": [],
+      "digest": "e544d49c4417f4046ae8847e749b56a818b30a655cb7d30cdd7cb50c44c57ab5",
+      "stamp": [
+        1785728321512400200,
+        7608,
+        1790928352910942400
+      ]
+    },
+    "poor-charlies-almanack/value-assessment/SKILL.md": {
+      "title": "价值评估原则",
+      "description": "当用户需要评估某项投资、收购标的、商业机会或重大资源投入是否\"值得\"时调用。典型触发信号:涉及\"内在价值\"\"安全边际\"\"护城河\"\"定价权\"\"买还是不买\"等决策。不适用于纯心理学偏差分析(用 misjudgment-checklist)或规模效应判断(用 scale-advantage-analysis)。",
+      "enabled": true,
+      "char_count": 3537,
+      "keywords": [
+        "投资评估",
+        "安全边际",
+        "护城河",
+        "定价权",
+        "价值",
+        "原则"
+      ],
+      "triggers": [],
+      "digest": "5b092b0e9f9825537854fd20e9b0fe5907fa48bba09cdef4b69b1d30647f3d50",
+      "stamp": [
+        1785728321512400200,
+        8138,
+        1790928352912941600
+      ]
+    },
+    "trading-psychology/contrarian-pinball-edge/SKILL.md": {
+      "title": "逆向交易的弹球窍门：找到设计之外的规则",
+      "description": "用户追突破总是被套、想学\"找到市场设计之外的窍门\"、或在市场恐慌/极度疲软时不知道是否该反着买时使用。核心：像弹球机一样，市场存在设计师设定之外的\"窍门\"——发现它并反复利用即可获胜；方向通常是反直觉的：识别失败突破的初期反向，在市场最疲软时（如 5% 股票创新低的恐慌）买入，在市场狂热时谨慎。Triggers: 追突破被套/逆向交易/别人都在追我就反着来/恐慌买入/5%创新低/contrarian/pinball gimmick/trade against the crowd。不适用于：无行情数据的心理建议（那是心态 skill）、没有统计验证就盲目反着做。",
+      "enabled": true,
+      "char_count": 4460,
+      "keywords": [
+        "contrarian",
+        "pinball-gimmick",
+        "market-panic",
+        "reversal",
+        "edge-finding",
+        "追突破被套",
+        "逆向交易",
+        "别人都在追我就反着来",
+        "恐慌买入",
+        "5%创新低",
+        "pinball gimmick",
+        "trade against the crowd",
+        "交易",
+        "弹球",
+        "找到",
+        "窍门"
+      ],
+      "triggers": [],
+      "digest": "d2e757125d4efc8713ddfe282c02ec3c85c1ee4280822f06b3026fa058703217",
+      "stamp": [
+        1790926060672272500,
+        9747,
+        1790928352928363400
+      ]
+    },
+    "trading-psychology/emotional-temperature-gate/SKILL.md": {
+      "title": "情绪温度测量：状态不对不交易",
+      "description": "用户问\"今天该不该交易/开仓\"、交易前情绪状态不稳定（无聊、烦躁、亢奋、低落），或想建立\"状态不对就不交易\"的自检机制时使用。核心：周期性测量情绪温度（激发水平×效价），把身心状态作为交易的正式组成部分，状态不对就离场。Triggers: 今天适合交易吗/没状态/心情烦躁/太亢奋/无聊想交易/should I trade today/not in the mood/emotional state。不适用于：问具体买卖点、止损数值、市场方向判断。",
+      "enabled": true,
+      "char_count": 4014,
+      "keywords": [
+        "execution-discipline",
+        "state",
+        "checklist",
+        "self-assessment",
+        "trading",
+        "今天适合交易吗",
+        "没状态",
+        "心情烦躁",
+        "太亢奋",
+        "无聊想交易",
+        "should i trade today",
+        "not in the mood",
+        "emotional state",
+        "交易",
+        "情绪",
+        "测量"
+      ],
+      "triggers": [],
+      "digest": "e1cadafba758c555c471e9ff031575a2202d5e2b0090ca52076cb6e73dc34ebd",
+      "stamp": [
+        1787019220436157500,
+        8472,
+        1790928352928866300
+      ]
+    },
+    "trading-psychology/fearless-trading-inventory/SKILL.md": {
+      "title": "大无畏的交易清单 / 一致性复盘",
+      "description": "用户连续亏损却找不到原因、每笔交易\"都有理由\"仍稳定亏钱、或想系统性复盘交易历史时使用。核心：像嗜酒者互诫协会的道德清单一样，一次性地、不美化地审查全部交易历史，逐笔对照成功与失败交易，找出五个维度的\"不一致\"（仓位/准备/执行/角度/清仓），而非盯着盈亏数字。Triggers: 复盘/为什么总亏/交易记录/日志/一致性/trade review/why do I keep losing/inconsistent trading。不适用于：没有交易历史时的即兴建议、问具体买卖点、纯策略咨询。",
+      "enabled": true,
+      "char_count": 4123,
+      "keywords": [
+        "review",
+        "journal",
+        "consistency",
+        "checklist",
+        "trading",
+        "复盘",
+        "为什么总亏",
+        "交易记录",
+        "日志",
+        "一致性",
+        "trade review",
+        "why do i keep losing",
+        "inconsistent trading",
+        "交易",
+        "清单"
+      ],
+      "triggers": [],
+      "digest": "897eee053729452ec3b3b3161297917816788636f893efe5b2de5a8cedf6cdbf",
+      "stamp": [
+        1787019220436157500,
+        9075,
+        1790928352930870700
+      ]
+    },
+    "trading-psychology/implicit-learning-immersion/SKILL.md": {
+      "title": "沉浸式学习：技能是练出来的，不是学出来的",
+      "description": "用户想真正\"学会\"一种交易技能（盘感、模式识别、解读市场），而不是停留在理论理解，或发现自己\"懂了但做不出来\"时使用。核心：高级交易技能靠沉浸式练习在无意识层面建立，而非靠讲解；通过大量模拟+真实练习、刻意改变练习环境、把练习内容变熟悉（重复的力量）来内化。Triggers: 盘感怎么练/懂了但做不到/模拟盘怎么用/怎么把学的东西变成肌肉记忆/implicit learning/immersion/learn by doing。不适用于：理论知识的快速掌握（直接读资料更快）、心理状态的干预（用其他心理 skill）。",
+      "enabled": true,
+      "char_count": 4028,
+      "keywords": [
+        "implicit-learning",
+        "immersion",
+        "practice",
+        "skill-acquisition",
+        "execution-discipline",
+        "盘感怎么练",
+        "懂了但做不到",
+        "模拟盘怎么用",
+        "怎么把学的东西变成肌肉记忆",
+        "implicit learning",
+        "learn by doing",
+        "出来",
+        "学习",
+        "技能",
+        "沉浸"
+      ],
+      "triggers": [],
+      "digest": "9d573de11ef9055a5fa740eac671db8771f7271504924ca2eb500bec7ded4316",
+      "stamp": [
+        1787019220437156900,
+        8787,
+        1790928352931871200
+      ]
+    },
+    "trading-psychology/internal-observer-emotion-data/SKILL.md": {
+      "title": "内部观察员 / 情绪即数据",
+      "description": "用户交易时被强烈情绪裹挟（恐惧、自满、焦虑、贪婪），问\"该怎么控制情绪\"或\"该不该听自己感觉\"时使用。核心：情绪不是敌人而是数据——激活内部观察员，把自满/恐惧/无聊当作市场的反向指标来研究，而非消除情绪。Triggers: 心态崩了/控制不住情绪/太紧张/太兴奋/凭感觉/该听直觉吗/emotional trading/too emotional/trust my gut。不适用于：需要具体止损/仓位计算、急性危机干预、纯技术分析问题。",
+      "enabled": true,
+      "char_count": 4142,
+      "keywords": [
+        "emotion",
+        "self-observation",
+        "internal-observer",
+        "market-reading",
+        "mental-model",
+        "心态崩了",
+        "控制不住情绪",
+        "太紧张",
+        "太兴奋",
+        "凭感觉",
+        "该听直觉吗",
+        "emotional trading",
+        "too emotional",
+        "trust my gut",
+        "情绪",
+        "数据"
+      ],
+      "triggers": [],
+      "digest": "e97b0b05940320fc64daf8a4d984c40d00ede6ac8daf87085f8df5129535f599",
+      "stamp": [
+        1787019220438165600,
+        9208,
+        1790928352932870800
+      ]
+    },
+    "trading-psychology/market-meta-communication/SKILL.md": {
+      "title": "市场元信息：怎么走，比走到哪更重要",
+      "description": "用户看不懂\"指数涨但个股不涨\"之类的市场信号、需要判断趋势是否健康、或想学习\"怎么走比走到哪更重要\"的元信息解读框架时使用。核心：股市像人一样同时发出信息（做了什么：涨跌多少）与元信息（怎么做的：节奏、量能、广度、效率）——趋势的健康度藏在元信息里；效率下降、期望落空、广度不足是趋势破坏的信号。Triggers: 假突破/指数涨个股不涨/背离/怎么解读市场/趋势健不健康/元信息/market breadth/divergence/false breakout。不适用于：具体选股/买卖点咨询（那是市场分析方法，不是心理技能）、情绪心理类问题（用其他 skill）。",
+      "enabled": true,
+      "char_count": 4279,
+      "keywords": [
+        "meta-communication",
+        "market-breadth",
+        "divergence",
+        "efficiency",
+        "market-reading",
+        "假突破",
+        "指数涨个股不涨",
+        "背离",
+        "怎么解读市场",
+        "趋势健不健康",
+        "元信息",
+        "market breadth",
+        "false breakout",
+        "信息",
+        "市场",
+        "重要"
+      ],
+      "triggers": [],
+      "digest": "60eeda21479a1d1355d403663675cc0f6ea3e4cc4a4cc96a1e22bcd1bfd9bf8c",
+      "stamp": [
+        1787019220438165600,
+        9394,
+        1790928352932870800
+      ]
+    },
+    "trading-psychology/novelty-change-consolidation/SKILL.md": {
+      "title": "新意 → 改变 → 巩固：为什么改变总打回原形",
+      "description": "用户学新方法/新心态但几周后打回原形、改变总是\"一阵子热度\"、或想理解为什么改变这么难保持时使用。核心：改变=新意（打破旧模式）+巩固（新模式在状态绑定的重复中内化）两阶段——光有新意不够，巩固需要\"多次重复 + 持续努力\"，否则回到旧路；书中引研究：有效治疗后退步率仍接近 75%。Triggers: 又打回原形/改变维持不住/学了新方法又回到老样子/新意/巩固/relapse/back to old habits/change doesn't stick。不适用于：单次触发打断（用 trigger-and-trading-coach）、习惯重建的替代行为设计（用 selective-attention 思路，但该技能未验证——直接提供\"巩固\"方法即可）。",
+      "enabled": true,
+      "char_count": 4659,
+      "keywords": [
+        "change",
+        "consolidation",
+        "novelty",
+        "repetition",
+        "state-binding",
+        "behavior-change",
+        "又打回原形",
+        "改变维持不住",
+        "学了新方法又回到老样子",
+        "新意",
+        "巩固",
+        "relapse",
+        "back to old habits",
+        "change doesn't stick",
+        "原形",
+        "改变"
+      ],
+      "triggers": [],
+      "digest": "a5befe616f3b72b4e7eda1c03bb2f97d2476312b5f83a0525bde162363ad55dc",
+      "stamp": [
+        1787019220439158500,
+        10073,
+        1790928352935146600
+      ]
+    },
+    "trading-psychology/solution-focused-trading/SKILL.md": {
+      "title": "聚焦解决方案：从特例中找成功模板",
+      "description": "用户想改变某个反复出现的坏交易习惯（如报复性交易、扛单、过早止盈），或想\"戒掉\"某个模式但每次下决心都没用时使用。核心：不穷究问题成因，而是寻找\"问题模式失效的例外时刻\"，把例外延长、放大成可复制的模板——问题往往是过去某个阶段有效、现在失效的解决方案。Triggers: 戒不掉/改不了/老毛病又犯/反复亏/明明知道却做不到/can't stop bad habit/repeat the same mistake。不适用于：需要紧急止损的技术问题、纯性格自我怀疑。",
+      "enabled": true,
+      "char_count": 3929,
+      "keywords": [
+        "change",
+        "solution-focused",
+        "review",
+        "trading-pattern",
+        "mental-model",
+        "戒不掉",
+        "改不了",
+        "老毛病又犯",
+        "反复亏",
+        "明明知道却做不到",
+        "can't stop bad habit",
+        "repeat the same mistake",
+        "成功",
+        "模板",
+        "特例",
+        "聚焦"
+      ],
+      "triggers": [],
+      "digest": "cadb182319041b2f95a480acd1d4c0e9d998fca7ed10d0cb2122f0849d8c551c",
+      "stamp": [
+        1787019220440157300,
+        8581,
+        1790928352937652200
+      ]
+    },
+    "trading-psychology/state-shifting/SKILL.md": {
+      "title": "状态切换：身体是情绪的方向盘",
+      "description": "用户在交易中被情绪状态（紧张、兴奋、沮丧、赌气）锁死、无法思考，或想学习\"换挡\"技术时使用。核心：利用身体状态与情绪的绑定关系，用身体动作（起身活动、改变姿势、呼吸节奏）改变身体状态，从而改变情绪与思维——因为身体状态和情绪状态是同一枚硬币的两面，控制了身体就控制了情绪。Triggers: 太紧张了/坐不住了/越想越气/手在抖/被套住了/情绪上头怎么办/can't think straight/too tense/need to reset/calm down。不适用于：需要心理预演提前训练（用 stress-inoculation-rehearsal）、需要止损规则（用 stop-loss-discipline）。",
+      "enabled": true,
+      "char_count": 4051,
+      "keywords": [
+        "state-shifting",
+        "body-mind",
+        "emotion-regulation",
+        "in-the-moment",
+        "太紧张了",
+        "坐不住了",
+        "越想越气",
+        "手在抖",
+        "被套住了",
+        "情绪上头怎么办",
+        "can't think straight",
+        "too tense",
+        "need to reset",
+        "calm down",
+        "切换",
+        "情绪"
+      ],
+      "triggers": [],
+      "digest": "cbba86071f944da74f22121acfd8298bfffa296506eda67a58ad4fab4d6dde3d",
+      "stamp": [
+        1787019220441159500,
+        8644,
+        1790928352939656500
+      ]
+    },
+    "trading-psychology/stop-loss-discipline/SKILL.md": {
+      "title": "止损纪律：三分法止损 + 失败是成本",
+      "description": "用户止损执行不了（舍不得砍、死扛、把短线做成中线）、想把止损规则\"预先写死\"、或想知道作者的三分法止损体系时使用。核心：止损规则分三类——基于价格/基于市场指标/基于时间（作者最喜欢基于时间：达到时限无论价位平仓），把止损重新定义为\"假设被证伪\"而非\"亏损\"，并把失败当作做生意的成本不内化。Triggers: 止损/割肉/死扛/舍不得砍/套住了/又扛单/保本/stop loss/cut losses/taking a loss。不适用于：止损到位但心态崩了需要复盘（用 fearless-trading-inventory）、盈利后的仓位扩张（用 trading-plan-anchor）。",
+      "enabled": true,
+      "char_count": 4759,
+      "keywords": [
+        "stop-loss",
+        "risk-control",
+        "discipline",
+        "three-types",
+        "execution-discipline",
+        "止损",
+        "割肉",
+        "死扛",
+        "舍不得砍",
+        "套住了",
+        "又扛单",
+        "保本",
+        "stop loss",
+        "cut losses",
+        "taking a loss",
+        "三分法"
+      ],
+      "triggers": [],
+      "digest": "fba8edfad8536bcab0ae1040f0a05a074fbac8ebdd7178d0d14687aea2aa0b62",
+      "stamp": [
+        1787019220441159500,
+        10222,
+        1790928352940656300
+      ]
+    },
+    "trading-psychology/stress-inoculation-rehearsal/SKILL.md": {
+      "title": "压力预防：在脑海中放电影",
+      "description": "用户害怕某个交易场景（止损被触发、隔夜持仓、暴跌、重仓）、每次都因恐惧执行不了计划，或想提前训练应对最坏情形时使用。核心：开市前闭眼深呼吸在脑海中反复\"放电影\"预演最坏情境，直到无须停顿完整播完，像接种疫苗一样对真实压力脱敏。Triggers: 怕止损/不敢下单/害怕隔夜/担心暴跌/心里没底/最坏情况怎么办/afraid to pull the trigger/scared of stop loss/rehearse worst case。不适用于：已有明确止损规则但纯执行力问题（用 stop-loss-discipline）、急性创伤应激需要专业治疗。",
+      "enabled": true,
+      "char_count": 4175,
+      "keywords": [
+        "心理演练",
+        "心理预演",
+        "情境预演",
+        "压力预防",
+        "心理排练",
+        "心理热身",
+        "rehearsal",
+        "exposure",
+        "preparation",
+        "execution-discipline",
+        "stress",
+        "想在脑海里排练面对最坏交易情境",
+        "怕止损",
+        "不敢下单",
+        "害怕隔夜",
+        "担心暴跌"
+      ],
+      "triggers": [
+        "交易亏损后感到痛苦，想预演下次的应对过程",
+        "开盘前很焦虑，想提前练习应对暴跌",
+        "不敢执行止损，想练习承受亏损",
+        "想在脑海里排练面对最坏交易情境"
+      ],
+      "digest": "b89fed7a963f1e08b194a473097585b426137d96cad6b6b5c1f219a579d44aec",
+      "stamp": [
+        1790931846371656600,
+        9329,
+        1790928352941663700
+      ]
+    },
+    "trading-psychology/trading-personality-match/SKILL.md": {
+      "title": "交易-性格匹配：先检查结构，再谈心态",
+      "description": "用户有完善的交易系统却总是执行不了、怀疑\"是不是我心态问题\"、或想知道自己性格适不适合某种交易方式时使用。核心：很多\"情绪问题\"其实是\"结构问题\"——方法必须与性格匹配（机械系统 vs 自由裁量）；用 A/B 类综合征定位注意力风格（冲动分散 vs 过度僵化）；用\"理想交易者建模\"（凯利的角色疗法）在亲身体验中塑造一个具体、翔实的理想自我。Triggers: 系统很好但我执行不了/我是不是不适合交易/机械交易不顺手/性格适合什么方法/A类综合征/ideal trader model/personality fit。不适用于：纯心理情绪问题（用其他 skill）、无交易系统时讨论性格。",
+      "enabled": true,
+      "char_count": 4709,
+      "keywords": [
+        "personality-fit",
+        "ideal-trader-model",
+        "attention-style",
+        "系统很好但我执行不了",
+        "我是不是不适合交易",
+        "机械交易不顺手",
+        "性格适合什么方法",
+        "a类综合征",
+        "ideal trader model",
+        "personality fit",
+        "交易",
+        "匹配",
+        "心态",
+        "性格",
+        "检查",
+        "结构"
+      ],
+      "triggers": [],
+      "digest": "9c7a242f3a6ce6cbde01399064fa11dde80a3d35b08c37feefc41e6ec86ffa2f",
+      "stamp": [
+        1787019220442653200,
+        10508,
+        1790928352941663700
+      ]
+    },
+    "trading-psychology/trading-plan-anchor/SKILL.md": {
+      "title": "交易计划 = 船锚：说出来 + 假设检验 + 先锋头寸",
+      "description": "用户盘中总被临时消息/情绪带跑、开市前没有成文计划、或想学习作者的计划构造法（大声说出计划/每笔交易=可证伪假设/先锋头寸）时使用。核心：交易计划是风暴中的船锚——大声说出计划使其客观化；每笔交易是一个科学假设（入场理由+可证伪条件）；用先锋头寸\"投石问路\"再决定加仓。Triggers: 盘中总被带跑/计划赶不上变化/开盘前要准备什么/怎么坚持计划/先锋头寸/trading plan/plan the trade。不适用于：止损规则本身（用 stop-loss-discipline）、没有交易系统时的空谈计划。",
+      "enabled": true,
+      "char_count": 4420,
+      "keywords": [
+        "trading-plan",
+        "anchor",
+        "hypothesis-testing",
+        "scout-position",
+        "execution-discipline",
+        "盘中总被带跑",
+        "计划赶不上变化",
+        "开盘前要准备什么",
+        "怎么坚持计划",
+        "先锋头寸",
+        "trading plan",
+        "plan the trade",
+        "交易",
+        "假设检验",
+        "先锋",
+        "出来"
+      ],
+      "triggers": [],
+      "digest": "34676b7b51240b420650bc317d4e0cb15fe2e32e4272c8a28ecca3186364b937",
+      "stamp": [
+        1787019220442653200,
+        9637,
+        1790928352943809100
+      ]
+    },
+    "trading-psychology/trigger-and-trading-coach/SKILL.md": {
+      "title": "触发器识别 → 消极自我对话 → 交易教练",
+      "description": "用户反复在同一类情境下失控（亏损后加仓、兴奋后乱买、被套后扛单），或想打断自动化坏行为时使用。核心：破坏性行为由\"触发器→消极自我对话→错误行动\"三步组成——先识别触发器，再辨识随之自动播放的消极磁带，最后用\"交易教练\"角色以教练口吻对学生版自己说话替换磁带。Triggers: 一亏就上头/控制不住自己/一激动就乱买/脑子里的声音/自我怀疑/又失控了/triggered/lose control/negative self-talk。不适用于：纯情绪烦躁无明确触发器、需要止损规则本身（用 stop-loss-discipline）。",
+      "enabled": true,
+      "char_count": 4448,
+      "keywords": [
+        "self-talk",
+        "coach",
+        "behavior-change",
+        "execution-discipline",
+        "一亏就上头",
+        "控制不住自己",
+        "一激动就乱买",
+        "脑子里的声音",
+        "自我怀疑",
+        "又失控了",
+        "triggered",
+        "lose control",
+        "negative self-talk",
+        "交易",
+        "对话",
+        "教练"
+      ],
+      "triggers": [],
+      "digest": "9b009fb9c0b047a8c6d7a88cf17e185f99d0251fc35f0963d2a7ab50e8c2dee7",
+      "stamp": [
+        1787019220443673600,
+        9968,
+        1790928352944312500
+      ]
+    }
+  }
+}

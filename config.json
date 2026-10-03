@@ -1,14 +1,20 @@
 {
-  "deepseek_api_key": "在此填入你的 DeepSeek API Key",
+  "deepseek_api_key": "（已存到系统凭据管理器）",
   "deepseek_base_url": "https://api.deepseek.com",
   "deepseek_model": "deepseek-chat",
-  "pet_name": "小戒",
-  "check_interval_minutes": 5,
-  "discipline": {
-    "panic_down_count_threshold": 3500,
-    "fomo_up_count_threshold": 4000,
-    "max_trades_per_day": 3,
-    "remind_times": ["09:30", "11:25", "14:45"]
+  "pet_name": "花花",
+  "system_prompt": "你是一个实用的对话助手。用自然、直接、简单简洁的中文回答，先说结论，再补充必要信息，避免多余寒暄。回答应完整，不为简短而省略关键内容；复杂问题，总结为小的要点。总输出不要超过300个字。不要截断内容，而是简化说要点。",
+  "pet_scale_percent": 70,
+  "speech_reminder": {
+    "enabled": true,
+    "interval_minutes": 30,
+    "text": "主人，记得喝水哦~"
   },
-  "system_prompt": "你是一个股票交易纪律监督助手，名字叫{pet_name}。你的核心任务是提醒用户遵守交易纪律，不要冲动交易。说话风格：温柔但坚定，像一个负责任的交易教练，偶尔可以带点小傲娇。当用户说要买卖股票时，你要先反问：这是计划内的交易吗？是追高还是恐慌割肉？止损止盈位设好了吗？如果用户明显在冲动，你要直接警告他。不要给具体买卖建议，只做纪律提醒。回答要简短，一般不超过3句话。"
+  "wellness": {
+    "enabled": true,
+    "interval_minutes": 60
+  },
+  "quiet_mode": {
+    "fullscreen": true
+  }
 }

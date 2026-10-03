@@ -1,0 +1,52 @@
+{
+  "skill": "novelty-change-consolidation",
+  "version": "0.1.0",
+  "source_book": "《投资交易心理分析》 — Brett N. Steenbarger",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我学了新方法，几周后又打回原形了。",
+      "expected_behavior": "激活 novelty-change-consolidation，诊断缺巩固——设计状态绑定的重复计划。",
+      "notes": "正面场景: 打回原形=缺巩固"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我的改变总是维持不住，为什么？",
+      "expected_behavior": "激活 novelty-change-consolidation，解释新意→改变→巩固机制与75%退步率，给出巩固方案。",
+      "notes": "正面场景: 改变维持不住"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "怎么让新习惯固定下来不反弹？",
+      "expected_behavior": "激活 novelty-change-consolidation，建立重复计划+状态绑定+检查点。",
+      "notes": "正面场景: 习惯固化"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我一亏就上头，现在就想打断这个行为。",
+      "expected_behavior": "不应激活本 skill（要的是即时打断），应激活 trigger-and-trading-coach。",
+      "notes": "跨 skill 混淆诱饵: 即时打断 vs 长期巩固"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我打算换一种交易风格，波段还是趋势好？",
+      "expected_behavior": "不应激活本 skill（风格选择/知识问题）。",
+      "notes": "诱饵: 风格选择咨询"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我坚持新方法三周了，还要继续巩固吗？",
+      "expected_behavior": "边界判断: 激活本 skill——三周是初期，需设检查点评估内化程度；若已自动化可减频但仍需保持警惕（75%退步率）。",
+      "notes": "边界: 巩固期的长度"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "至少 3 条 should_trigger + 2 条 should_not_trigger + 1 条 edge_case。全部 should_not_trigger 必须通过，且其中至少 1 条为同书兄弟 skill 场景。"
+}

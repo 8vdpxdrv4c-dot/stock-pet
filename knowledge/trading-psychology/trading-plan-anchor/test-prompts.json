@@ -1,0 +1,52 @@
+{
+  "skill": "trading-plan-anchor",
+  "version": "0.1.0",
+  "source_book": "《投资交易心理分析》 — Brett N. Steenbarger",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "盘中我总是被临时消息带跑，怎么坚持计划？",
+      "expected_behavior": "激活 trading-plan-anchor，开市前大声说出计划+意外预案，让计划成为船锚。",
+      "notes": "正面场景: 计划是船锚"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "开盘前我应该准备什么？",
+      "expected_behavior": "激活 trading-plan-anchor，构造当日计划（假设/入场/止损/目标/仓位）并说出。",
+      "notes": "正面场景: 开盘前计划构造"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我想先小仓位试试这个判断，可行吗？",
+      "expected_behavior": "激活 trading-plan-anchor，解释并应用先锋头寸'投石问路'规则。",
+      "notes": "正面场景: 先锋头寸"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我的止损总是不一致，帮我看看历史交易。",
+      "expected_behavior": "不应激活本 skill（是历史审查），应激活 fearless-trading-inventory（一致性复盘）。",
+      "notes": "跨 skill 混淆诱饵: 历史复盘 vs 未来计划"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "这个股票下周会不会涨？",
+      "expected_behavior": "不应激活本 skill（方向预测）。",
+      "notes": "诱饵: 行情预测"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我每天交易前都写计划，但写完从不看，还有用吗？",
+      "expected_behavior": "边界判断: 激活本 skill——写了不看的计划=没有计划，重点强调'大声说出来'的客观化步骤。",
+      "notes": "边界: 计划的形式vs使用"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "至少 3 条 should_trigger + 2 条 should_not_trigger + 1 条 edge_case。全部 should_not_trigger 必须通过，且其中至少 1 条为同书兄弟 skill 场景。"
+}
