@@ -10,7 +10,10 @@ from PyQt5.QtWidgets import (QApplication, QSystemTrayIcon, QMenu, QAction)
 QApplication.setAttribute(Qt.AA_EnableHighDpiScaling, True)
 QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps, True)
 
-import win_recycle
+if sys.platform == "win32":
+    import win_recycle
+else:
+    win_recycle = None
 from config import load_config
 from llm_client import LLMClient
 from question_memory import QuestionMemory
@@ -151,6 +154,8 @@ class App:
             self.pet.start_eating()
         elif action == "sleep":
             self.pet.start_sleeping()
+        elif action == "play":
+            self.pet.start_playing()
         elif action == "transform":
             self.pet.start_transform()
         elif action == "record":
@@ -188,6 +193,9 @@ class App:
 
     # ---------- 清空回收站 ----------
     def _on_empty_recycle(self):
+        if win_recycle is None:
+            self.chat.push_system_message("清空回收站功能仅支持 Windows。", "info")
+            return
         if self._busy_walk:
             self.chat.push_system_message("我还在路上呢，等我站稳了再点。", "info")
             return
@@ -284,6 +292,9 @@ class App:
 
 
 def main():
+    if "--smoke-test" in sys.argv:
+        from packaging_check import run
+        sys.exit(run())
     app = App()
     sys.exit(app.run())
 

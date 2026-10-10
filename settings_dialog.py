@@ -52,7 +52,8 @@ class SettingsDialog(QDialog):
         form.addRow("宠物名字", self.pet_name_edit)
         self.scale_spin = self._spin(50, 300, " %", 10)
         form.addRow("宠物大小", self.scale_spin)
-        self.startup_check = QCheckBox("登录 Windows 时自动启动")
+        self.startup_check = QCheckBox("登录电脑时自动启动")
+        self.startup_check.setEnabled(startup.is_supported())
         form.addRow("开机启动", self.startup_check)
         groups.addWidget(pet_box)
 

@@ -8,6 +8,7 @@ import re
 import sqlite3
 
 from knowledge_terms import terms
+from app_paths import user_data_dir
 
 logger = logging.getLogger(__name__)
 MEMORY_WORDS = frozenset("历史 以前 之前 过去 曾经 问过 聊过 记得 记住 记忆 提问 回答 回复 聊天 话题 继续 刚才 上次 详细 回忆 信息 事情".split())
@@ -128,8 +129,7 @@ def compact_history(history):
 
 class QuestionMemory:
     def __init__(self, path=None, max_items=5, max_chars=2000):
-        self.path = Path(path) if path is not None else Path(
-            os.environ.get("APPDATA", str(Path.home() / ".local/share"))) / "StockPet" / "question-memory.sqlite3"
+        self.path = Path(path) if path is not None else user_data_dir() / "question-memory.sqlite3"
         self.max_items = max_items
         self.max_chars = max_chars
         self.last_read_ok = None

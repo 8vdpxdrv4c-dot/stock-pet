@@ -53,7 +53,7 @@ class ActionButton(QPushButton):
 
 class PetActions(QWidget):
     action_requested = pyqtSignal(str)
-    ACTIONS = (("eat", "吃饭"), ("sleep", "睡觉"), ("chat", "对话"),
+    ACTIONS = (("eat", "吃饭"), ("sleep", "睡觉"), ("play", "玩耍"), ("chat", "对话"),
                ("record", "记录"), ("todo", "待办"), ("transform", "变身"))
 
     def __init__(self, pet):
@@ -99,7 +99,7 @@ class PetActions(QWidget):
                 for orientation in orientations:
                     positions = []
                     for i in range(len(self.ACTIONS)):
-                        angle = math.radians(orientation + span / 2 - i * span / 5)
+                        angle = math.radians(orientation + span / 2 - i * span / max(1, len(self.ACTIONS) - 1))
                         positions.append(QRect(round(center.x() + rx * math.cos(angle)) - half,
                                                round(center.y() - ry * math.sin(angle)) - half, size, size))
                     if (all(bounds.contains(box) for box in positions)

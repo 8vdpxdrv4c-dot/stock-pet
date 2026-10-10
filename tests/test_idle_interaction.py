@@ -37,7 +37,7 @@ class IdleInteractionTests(unittest.TestCase):
             QTest.qWait(180)
             interaction.tick()
             self.assertFalse(interaction.tap_clock.isValid())
-            for action in (pet.start_eating, pet.start_sleeping, pet.start_transform):
+            for action in (pet.start_eating, pet.start_sleeping, pet.start_playing, pet.start_transform):
                 action()
                 interaction.tap()
                 self.assertFalse(interaction.enabled())

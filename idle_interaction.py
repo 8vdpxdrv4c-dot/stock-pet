@@ -25,7 +25,7 @@ class IdleInteraction(QObject):
 
     def enabled(self):
         pet = self.pet
-        return (not any((pet._sleeping, pet._eating, pet._walking, pet._drag_animating,
+        return (not any((pet._sleeping, pet._eating, pet._playing, pet._walking, pet._drag_animating,
                          pet._transforming, pet._dock_edge, pet._movie))
                 and bool(pet._frames.get("idle")))
 

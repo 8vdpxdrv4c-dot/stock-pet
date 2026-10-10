@@ -4,10 +4,10 @@
   "deepseek_model": "deepseek-chat",
   "pet_name": "花花",
   "system_prompt": "你是一个实用的对话助手。用自然、直接、简单简洁的中文回答，先说结论，再补充必要信息，避免多余寒暄。回答应完整，不为简短而省略关键内容；复杂问题，总结为小的要点。总输出不要超过300个字。不要截断内容，而是简化说要点。",
-  "pet_scale_percent": 70,
+  "pet_scale_percent": 50,
   "speech_reminder": {
-    "enabled": true,
-    "interval_minutes": 30,
+    "enabled": false,
+    "interval_minutes": 1,
     "text": "主人，记得喝水哦~"
   },
   "wellness": {

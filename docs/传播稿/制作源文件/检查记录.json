@@ -1,0 +1,59 @@
+{
+  "render_checks": [
+    {
+      "name": "01-公众号封面",
+      "images": 1,
+      "overflow": []
+    },
+    {
+      "name": "02-制作路线",
+      "images": 3,
+      "overflow": []
+    },
+    {
+      "name": "03-动作怎么做",
+      "images": 2,
+      "overflow": []
+    },
+    {
+      "name": "04-透明动画流程",
+      "images": 2,
+      "overflow": []
+    },
+    {
+      "name": "05-修复真实问题",
+      "images": 1,
+      "overflow": []
+    },
+    {
+      "name": "06-组装成桌宠",
+      "images": 2,
+      "overflow": []
+    },
+    {
+      "name": "07-视频号竖版封面",
+      "images": 1,
+      "overflow": []
+    },
+    {
+      "name": "mobile-article",
+      "horizontalOverflow": false
+    }
+  ],
+  "asset_sha256": {
+    "character.png": "d2ca906b8bf4feb44007c12e295683217bcc93f98b1f91580be1421a84965fb7",
+    "drag-sheet.png": "28e5084470d10a6190e40f97f03767f44291ae91a115aca6dc1444993a59461d",
+    "sleep.png": "99fa7d805c6bd4916890cfd579bdfeff703bdd814f54fba4de633b2ae108b97c",
+    "play.png": "86c29c3f59fd563b75773b1bffddbb7c11b24cd5fb44d61b107ee4e3af6f597d",
+    "eat.png": "05fe845a1f47dd82af4301374258d5b7ea666e6f1dc4b19c5d0f55851adf0898",
+    "actions.png": "63035804d69b791c40c52643086c84436c8c6b3a5db21fc46fe0f7df4d564538",
+    "chat.png": "1aed2c38b4cd0fafdf14082a9edcdd66556c7e3fe5121ab35a57525674fb87f7",
+    "paw-fix.jpg": "bcb816a4521064be773cff67325965abdf345b26e2c4e86473e37711a7ee168b",
+    "playing-loop.gif": "2d0ecdab8cfb57dbc2cd511aa32aed5bdd33ded4b2866aec3f781b72774d7f6b",
+    "playing-source.mp4": "79153325a30eeb4bce05d69e9c9e2f1e71f0b8b32981fe463aab59d840578239",
+    "eating-source.mp4": "4e4c3005c8a340c7d25982d7724f7a24c0adb32c0c99a61383c40cfaff95def9",
+    "eating-preview.mp4": "64c6058509409cb55d3d6bdb70674ee2a7aa71c7ac648cbc1dce9c50b57fa0af"
+  },
+  "voice_characters": 387,
+  "subtitle_blocks": 20
+}

@@ -1,0 +1,41 @@
+{
+  "source": "../videos/playing-source.mp4",
+  "source_sha256": "79153325a30eeb4bce05d69e9c9e2f1e71f0b8b32981fe463aab59d840578239",
+  "original_filename": "猫顽皮舔屏视频生成.mp4",
+  "frame_count": 288,
+  "source_frame_count": 145,
+  "source_frame_range": [
+    0,
+    145
+  ],
+  "fps": 24,
+  "timer_interval_ms": 42,
+  "canvas_size": [
+    360,
+    360
+  ],
+  "shared_crop": [
+    14,
+    0,
+    948,
+    720
+  ],
+  "padding": 8,
+  "alpha_stabilization": "none",
+  "solid_interior": true,
+  "interior_repair": "filled silhouette; opaque interior; 3px soft outer edge; original source RGB",
+  "processing": "u2netp alpha mask; shared crop/scale; forward then reverse source frames; no generated in-between frames",
+  "playback": "ping-pong without duplicated endpoints",
+  "ground_reflection_cleanup": {
+    "method": "original-matte confidence gate after opaque-interior repair",
+    "source_y_band": [
+      620,
+      640
+    ],
+    "confidence_range": [
+      195,
+      245
+    ],
+    "preserve": "source RGB, original crop/scale, 145 source frames, timing and ping-pong order"
+  }
+}

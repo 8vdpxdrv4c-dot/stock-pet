@@ -69,7 +69,7 @@ class PetActionsTests(unittest.TestCase):
                         self.pet.move(left, top)
                         boxes = self.menu._arrange(bounds)
                         cat = self.cat_region()
-                        self.assertEqual(len(boxes), 6)
+                        self.assertEqual(len(boxes), len(self.menu.ACTIONS))
                         for box in boxes:
                             self.assertTrue(bounds.contains(box))
                             self.assertTrue(QRegion(box, QRegion.Ellipse).intersected(cat).isEmpty())

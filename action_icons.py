@@ -41,6 +41,18 @@ def action_icon(action):
         p.setBrush(ink)
         for x, y in ((10, 11), (16, 9), (22, 11)):
             p.drawEllipse(QRectF(x - 1.2, y - 1.2, 2.4, 2.4))
+    elif action == "play":
+        p.drawEllipse(QRectF(5, 5, 21, 21))
+        yarn = QPainterPath()
+        yarn.moveTo(7, 10)
+        yarn.cubicTo(16, 10, 22, 17, 22, 24)
+        yarn.moveTo(11, 6)
+        yarn.cubicTo(11, 16, 18, 23, 24, 22)
+        yarn.moveTo(6, 19)
+        yarn.cubicTo(14, 19, 20, 12, 21, 7)
+        yarn.moveTo(17, 26)
+        yarn.cubicTo(18, 31, 27, 31, 28, 25)
+        p.drawPath(yarn)
     elif action == "sleep":
         moon = QPainterPath()
         moon.addEllipse(QRectF(5, 5, 21, 22))

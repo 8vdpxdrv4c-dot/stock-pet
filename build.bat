@@ -1,11 +1,16 @@
 @echo off
 chcp 65001 >nul
 cd /d "%~dp0"
-python build_distribution.py
+python --version >nul 2>&1
 if errorlevel 1 (
-    echo 打包失败，请检查当前 Python 环境及 Inno Setup 安装。
+    py -3 build_distribution.py %*
+) else (
+    python build_distribution.py %*
+)
+if errorlevel 1 (
+    echo 打包失败，请查看上方错误和 build-exe.log。
     pause
     exit /b 1
 )
-echo 安装包已生成：dist\StockPet-Setup-1.0.0.exe
+echo 打包完成。默认程序：dist\StockPet.exe
 pause

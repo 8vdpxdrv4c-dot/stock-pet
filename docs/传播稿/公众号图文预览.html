@@ -1,0 +1,61 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>这只 AI 桌宠是怎么做出来的</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f4f0e8;color:#353029;font-family:"Microsoft YaHei","PingFang SC",sans-serif}
+article{max-width:820px;margin:32px auto;background:#fffdf9;padding:48px 46px;border-radius:18px}
+h1{font-size:34px;line-height:1.45;margin:0 0 24px;letter-spacing:-.5px}h2{font-size:25px;line-height:1.55;margin:48px 0 20px;color:#9f531e;border-top:1px solid #eddfce;padding-top:25px}
+p,li{font-size:18px;line-height:1.95;margin:20px 0}strong{color:#ab541b}blockquote{margin:20px 0;padding:20px 24px;background:#fbf0de;border-left:4px solid #cf8540;border-radius:0 12px 12px 0;font-size:17px;line-height:1.9}
+figure{margin:25px 0 32px}img{max-width:100%;display:block;border-radius:10px}figcaption{font-size:13px;color:#988571;line-height:1.6;margin-top:10px;text-align:center}ul{padding-left:25px}li{margin:9px 0}
+@media(max-width:600px){body{background:#fffdf9}article{padding:24px 20px;margin:0;border-radius:0}h1{font-size:27px}h2{font-size:23px}p,li{font-size:17px}blockquote{font-size:16px;padding:16px 18px}}
+</style><article><h1>这只 AI 桌宠是怎么做出来的</h1>
+<figure><img src="images/01-公众号封面.png" alt="把一张猫图变成 AI 桌宠"><figcaption>把一张猫图变成 AI 桌宠</figcaption></figure>
+<p>它会在桌面上吃饭、睡觉、翻滚，也能打开聊天窗口，陪你说几句话。</p>
+<p>这只叫“花花”的小猫，从形象、动作素材到程序，都是交给 AI 制作的。我负责提需求、看效果，再把不满意的地方说清楚。</p>
+<p>做完这个项目，我发现，最需要想清楚的是制作顺序：<strong>先定角色，再做动作，最后让 AI 把它们接起来。</strong></p>
+<p>下面按这个顺序，分享你也可以照着走的流程。每一步都附上可以复制的提示词。</p>
+<h2>第一步 先选定一张角色图</h2>
+<figure><img src="images/02-制作路线.png" alt="角色定稿到动作再到桌宠的制作流程"><figcaption>角色定稿到动作再到桌宠的制作流程</figcaption></figure>
+<p>角色定稿就是宠物的“定妆照”。后面不管生成吃饭还是睡觉，都要把这张图作为参考带上。</p>
+<p>否则，很容易出现一种情况：待机时还是圆脸橘猫，吃饭时就变了毛色，睡醒连眼睛都不一样了。</p>
+<p>先把脸型、毛色、身体比例和画风确定下来。选定后，再逐项修改，不要每个动作都重新设计一遍。</p>
+<p><strong>把这段发给图像生成工具：</strong></p>
+<blockquote>帮我设计一只橘白猫桌面宠物。毛茸茸的立体卡通风格，圆脸、短腿、深棕色大眼睛，白色胸口和脚掌。正面坐姿，全身完整入画，耳朵、尾巴不能被裁切。固定镜头，干净背景，不要文字和装饰。</blockquote>
+<p>选好后，每次生成动作都附上它，再补一句：</p>
+<blockquote>这张图是唯一的角色外观参考。保持脸型、毛色花纹、眼睛和身体比例一致，只修改本次要求的动作。</blockquote>
+<h2>第二步 小动作用图集 大动作用视频</h2>
+<figure><img src="images/03-动作怎么做.png" alt="连续动作图与图生视频两条制作路线"><figcaption>连续动作图与图生视频两条制作路线</figcaption></figure>
+<p>眨眼、挥爪这种小动作，可以做成几张连续图片。一张图分成几个格子，每格都是同一只猫在不同时刻的姿势。</p>
+<p>本项目的拖拽素材，就是一张六格动作图。头和身体尽量不动，只让前爪交替活动。</p>
+<p><strong>动作图提示词：</strong></p>
+<blockquote>基于参考猫，制作两行三列的连续挥爪动作图。六格中的头、鼻尖、身体位置和大小一致，只让两只前爪小幅交替伸出和收回。不要多出肢体，不要挡住脸，不要文字、格线和背景。</blockquote>
+<p>翻滚、伸懒腰、吃饭这种连续动作，可以先做成短视频，再处理成桌宠素材。</p>
+<p><strong>图生视频提示词：</strong></p>
+<blockquote>用参考图中的同一只猫，生成一段短玩耍视频。小幅翻滚后伸懒腰，动作连贯。镜头固定，不推拉，不改变角色大小。全身始终在画面内，背景保持单一纯色，开头和结尾尽量停在接近的姿态。</blockquote>
+<p>这里有三个约束特别有用：<strong>镜头固定、全身入画、角色不变。</strong></p>
+<p>先检查动作有没有变形，再做下一步。视频里多出来的一条腿，去掉背景以后也不会自动消失。</p>
+<h2>第三步 去背景之外 还要让动作稳定</h2>
+<figure><img src="images/04-透明动画流程.png" alt="原始视频处理为透明动画的示意"><figcaption>原始视频处理为透明动画的示意</figcaption></figure>
+<p>图片和视频生成后，还需要去掉背景、统一大小和位置，再接成循环。</p>
+<p>这一步最容易被忽略的是“统一”。</p>
+<p>如果每一张图片都单独裁到最紧，再放大到相同尺寸，播放起来，猫就会忽大忽小、上下跳动。正确的要求是：<strong>整段动作使用同一套画布和缩放方式。</strong></p>
+<p><strong>把素材交给 AI 编程助手：</strong></p>
+<blockquote>请把这份素材处理成透明桌宠动画。保留原始素材，去除背景，保留毛发和白色身体。整段动作统一画布、裁切范围和缩放比例，不要逐张裁紧后放大。检查循环衔接，先给我浅色、深色背景下的预览，再接入桌宠。</blockquote>
+<p>循环也要单独检查。最后一帧突然跳回第一帧，会让动作像卡了一下。</p>
+<p>本项目的玩耍动画采用了正放再倒放，让猫沿着原来的动作回到起点。但吃饭、吞咽、走路等动作不一定适合倒放，还是要看实际预览。</p>
+<h2>第四步 反馈要具体到画面</h2>
+<figure><img src="images/05-修复真实问题.png" alt="白色脚掌误抠前后对比"><figcaption>白色脚掌误抠前后对比</figcaption></figure>
+<p>项目里就遇到过：去背景时，猫的白色脚掌也被误处理成了透明。</p>
+<p>这种时候，说“再自然一点”很难让 AI 找到问题。换成下面这样，目标就清楚了：</p>
+<blockquote>白色脚掌被误抠掉了。请恢复身体内部，只去掉外部背景，保留原视频的毛色，并在深色背景上检查。其他已经满意的部分保持不变。</blockquote>
+<p>同样的反馈方式也适用于其他问题：</p>
+<ul><li>头在抖：固定鼻尖和头部位置，只保留爪子的动作。</li><li>切换动作后变大：按猫身体的视觉大小统一比例。</li><li>首尾跳变：重新选择循环起止位置，避免用重影掩盖。</li><li>新动作变了脸：重新附上定稿，只保留新版本的动作设计。</li></ul>
+<p><strong>描述哪里不对，也说明哪些地方已经满意。</strong>这样更容易保住前面做好的效果。</p>
+<h2>第五步 让 AI 把素材接成桌宠</h2>
+<figure><img src="images/06-组装成桌宠.png" alt="项目中的动作菜单和聊天界面"><figcaption>项目中的动作菜单和聊天界面</figcaption></figure>
+<p>素材准备好后，把操作方式说清楚：</p>
+<blockquote>请把这些动作接入桌宠。默认待机，点击后可以选择吃饭、睡觉、玩耍；按住可以拖动，松开恢复之前的状态。各动作大小协调，提供恢复待机和退出。一次接入一个动作，运行给我看，再继续下一项。</blockquote>
+<p>然后再加聊天：</p>
+<blockquote>给桌宠加入聊天功能，让用户在设置里配置自己的模型服务。等待回复时，动画和拖动仍然正常。它叫花花，说话温暖、简洁，偶尔调皮，但认真提问时先认真回答。</blockquote>
+<p>想让它重启后还记得事情，就要继续让 AI 做真正的记忆功能。只写一句“你会永远记住主人”，并不会自动保存信息。</p>
+<h2>第一只宠物 可以从很小的目标开始</h2>
+<p>先做一张你喜欢的角色图，再让它会眨眼、能拖动、可以退出。</p>
+<p>等它真的出现在桌面上，再逐渐增加吃饭、睡觉、聊天。每一步都有可以观看、比较和修改的结果，这个过程就会清楚很多。</p>
+<p><strong>你想让什么角色住进自己的桌面？会给它起什么名字？</strong></p></article></html>

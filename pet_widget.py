@@ -11,6 +11,7 @@
 import logging
 import math
 import os
+import sys
 from PyQt5.QtCore import (Qt, QTimer, QElapsedTimer, QPoint, QPointF, QRectF, pyqtSignal)
 from PyQt5.QtGui import (QPainter, QPainterPath, QColor, QPen, QBrush, QFont, QPixmap, QMovie)
 from PyQt5.QtWidgets import (QWidget, QMenu, QAction, QApplication)
@@ -83,6 +84,7 @@ class PetWidget(QWidget):
         self._drag_timer.setInterval(85)
         self._drag_timer.timeout.connect(self._on_drag_frame_tick)
         self._transforming = False
+        self._transform_geometry = None
         self._transform_dock = None
         self._transform_base = QPixmap()
         self._transform_clock = QElapsedTimer()
@@ -122,6 +124,9 @@ class PetWidget(QWidget):
         self._eating = False
         self._eating_frames = []
         self._eating_interval = 200
+        self._playing = False
+        self._playing_frames = []
+        self._playing_interval = 42  # Extracted source video: 24 fps.
         self._sleep_frames = []
         self._walk_frames = []
         self._walk_left_frames = []
@@ -180,6 +185,7 @@ class PetWidget(QWidget):
         value = max(50, min(300, int(value)))
         if value == self.scale_percent:
             return
+        self._stop_transform()
         rect = self.frameGeometry()
         screen = QApplication.screenAt(rect.center()) or QApplication.primaryScreen()
         bounds = screen.availableGeometry()
@@ -198,7 +204,7 @@ class PetWidget(QWidget):
         self.update()
 
     def _warm_frame_cache(self):
-        groups = list(self._frames.values()) + [self._eating_frames, self._sleep_frames,
+        groups = list(self._frames.values()) + [self._eating_frames, self._sleep_frames, self._playing_frames,
                                                self._walk_frames, self._walk_left_frames,
                                                self._recycle_walk_frames, self._recycle_walk_left_frames,
                                                self._drag_frames]
@@ -313,6 +319,7 @@ class PetWidget(QWidget):
         if not self._eating_frames:
             self._eating_frames = self._load_action_frames(os.path.join(cat_dir, "eating-idle"))
         self._sleep_frames = self._load_action_frames(os.path.join(cat_dir, "sleep-idle"), "sleep_")
+        self._playing_frames = self._load_action_frames(os.path.join(cat_dir, "playing-idle"))
         self._walk_frames = self._load_action_frames(os.path.join(cat_dir, "walking-idle"), "walk_")
         self._walk_left_frames = [QPixmap.fromImage(pm.toImage().mirrored(True, False))
                                   for pm in self._walk_frames]
@@ -421,6 +428,8 @@ class PetWidget(QWidget):
             return self._sleep_frames
         if self._eating and self._eating_frames:
             return self._eating_frames
+        if self._playing and self._playing_frames:
+            return self._playing_frames
         prefix = _MOOD_TO_PREFIX.get(self.mood, "idle")
         if self._use_placeholder:
             return []
@@ -504,9 +513,10 @@ class PetWidget(QWidget):
         if self._walk_timer is not None:
             self._walk_timer.stop()
         self._frame_timer.setInterval(200 if self._sleeping else
+                                      self._playing_interval if self._playing else
                                       self._eating_interval if self._eating else self._idle_interval)
         self._frame_idx = 0
-        if self._movie is not None and not self._sleeping:
+        if self._movie is not None and not (self._sleeping or self._playing):
             self._frame_timer.stop()
             self._movie.setPaused(False)
         self.update()
@@ -646,10 +656,14 @@ class PetWidget(QWidget):
         for text, slot in [
             ("🐾 操作菜单", self.clicked.emit),
             ("🐱 恢复坐姿", self.start_idle),
+            ("🧶 玩耍", self.start_playing),
             ("⚙️ 设置", self.open_settings_requested.emit),
             ("🗑️ 清空回收站", self.empty_recycle_requested.emit),
         ]:
             a = QAction(text, self)
+            if text == "🗑️ 清空回收站" and sys.platform != "win32":
+                a.setEnabled(False)
+                a.setToolTip("清空回收站功能仅支持 Windows")
             a.triggered.connect(slot)
             menu.addAction(a)
         focus_action = QAction("专注模式（暂缓提醒）", self)
@@ -680,6 +694,17 @@ class PetWidget(QWidget):
                                     self._movie.currentPixmap() if self._movie else QPixmap())
             self._transform_dock = self._dock_edge
             self._set_dock_edge(None)
+            self._transform_geometry = self.geometry()
+            rect = self._transform_geometry
+            screen = QApplication.screenAt(rect.center()) or QApplication.primaryScreen()
+            bounds = screen.availableGeometry()
+            # Enlarge the entire group without squeezing the cats together.
+            factor = min(1.5, bounds.width() / rect.width(), bounds.height() / rect.height())
+            self.setFixedSize(round(rect.width() * factor), round(rect.height() * factor))
+            x = rect.center().x() - self.width() // 2
+            y = rect.bottom() + 1 - self.height()
+            self.move(max(bounds.left(), min(x, bounds.right() - self.width() + 1)),
+                      max(bounds.top(), min(y, bounds.bottom() - self.height() + 1)))
         self._transforming = True
         self._transform_clock.start()
         self._transform_timer.start()
@@ -691,6 +716,15 @@ class PetWidget(QWidget):
         self._transforming = False
         self._transform_timer.stop()
         self._transform_clock.invalidate()
+        if self._transform_geometry is not None:
+            expanded_size = self.size()
+            rect = self._transform_geometry
+            self._transform_geometry = None
+            self.setFixedSize(rect.size())
+            self.move(rect.topLeft())
+            if self._drag_pos is not None:
+                self._drag_pos = QPoint(round(self._drag_pos.x() * self.width() / expanded_size.width()),
+                                        round(self._drag_pos.y() * self.height() / expanded_size.height()))
         if restore_dock and self._transform_dock:
             self._set_dock_edge(self._transform_dock)
         self._transform_dock = None
@@ -715,10 +749,10 @@ class PetWidget(QWidget):
             central = index == len(poses) - 1
             p.setOpacity(1 if central else spread)
             side = 160 + (size - 160) * spread
-            bob = math.sin(elapsed / 170 + index) * .7 * spread
+            bob = math.sin(elapsed / 340 + index) * .7 * spread
             target = QRectF(90 + dx * spread - side / 2,
                             80 + dy * spread + bob - side / 2, side, side)
-            pm = self._transform_frames[(elapsed // 100 + index) % len(self._transform_frames)]
+            pm = self._transform_frames[(elapsed // 200 + index) % len(self._transform_frames)]
             if central and not self._transform_base.isNull():
                 p.setOpacity(1 - spread)
                 p.drawPixmap(target, self._transform_base, QRectF(self._transform_base.rect()))
@@ -730,6 +764,7 @@ class PetWidget(QWidget):
         self._stop_transform(restore_dock=False)
         self._sleeping = False
         self._eating = False
+        self._playing = False
         self._frame_idx = 0
         if self._movie is None:
             self._frame_timer.start(self._idle_interval)
@@ -740,11 +775,13 @@ class PetWidget(QWidget):
         self.update()
 
     def animation_state(self):
-        return {"action": "sleep" if self._sleeping else "eat" if self._eating else "idle",
+        return {"action": "sleep" if self._sleeping else "eat" if self._eating else
+                         "play" if self._playing else "idle",
                 "mood": self.mood, "frame": self._frame_idx}
 
     def restore_animation_state(self, state):
         {"sleep": self.start_sleeping, "eat": self.start_eating,
+         "play": self.start_playing,
          "idle": self.start_idle}[state["action"]]()
         self.set_mood(state["mood"])
         self._frame_idx = state["frame"] % max(1, len(self._current_group()))
@@ -753,6 +790,7 @@ class PetWidget(QWidget):
     def start_eating(self):
         self._stop_transform(restore_dock=False)
         self._sleeping = False
+        self._playing = False
         self._eating = bool(self._eating_frames)
         self._frame_idx = 0
         if self._movie is None:
@@ -763,6 +801,23 @@ class PetWidget(QWidget):
             self._movie.start()
         self.update()
 
+    def start_playing(self):
+        if not self._playing_frames:
+            logger.warning("玩耍帧缺失，保留当前动画")
+            return
+        self._stop_transform(restore_dock=False)
+        self._set_dock_edge(None)
+        if self._walking:
+            self.stop_walk()
+        self._sleeping = False
+        self._eating = False
+        self._playing = True
+        self._frame_idx = 0
+        if self._movie is not None:
+            self._movie.setPaused(True)
+        self._frame_timer.start(self._playing_interval)
+        self.update()
+
     def start_sleeping(self):
         self._stop_transform(restore_dock=False)
         if not self._sleep_frames:
@@ -770,6 +825,7 @@ class PetWidget(QWidget):
             return
         self._sleeping = True
         self._eating = False
+        self._playing = False
         self._frame_idx = 0
         self._frame_timer.start(200)
         if self._movie is not None:
@@ -795,7 +851,7 @@ class PetWidget(QWidget):
         group = self._current_group()
         if self._idle_interaction.enabled() and group:
             self._idle_interaction.draw(p, group[self._frame_idx % len(group)])
-        elif ((self._walking and self._walk_frames) or self._sleeping) and group:
+        elif ((self._walking and self._walk_frames) or self._sleeping or self._playing) and group:
             pm = group[self._frame_idx % len(group)]
             self._draw_frame(p, pm)
         elif self._movie is not None:

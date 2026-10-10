@@ -31,6 +31,7 @@ Thumbs.db
 # PyInstaller
 *.spec
 !StockPet.spec
+!StockPet-macOS.spec
 
 # Local previews, logs, recovery copies and user data
 *.log

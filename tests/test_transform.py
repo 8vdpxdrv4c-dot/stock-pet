@@ -3,7 +3,7 @@ import unittest
 from unittest.mock import patch
 
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QPoint, QSize
 from PyQt5.QtTest import QTest
 from PyQt5.QtWidgets import QApplication
 from pet_widget import PetWidget
@@ -54,3 +54,36 @@ class TransformTests(unittest.TestCase):
         self.pet._start_drag_animation()
         self.assertFalse(self.pet._transforming)
         self.assertTrue(self.pet._drag_animating)
+
+    def test_group_is_larger_and_restores_original_geometry(self):
+        original = self.pet.geometry()
+        self.pet.start_transform()
+        self.assertEqual(self.pet.size(), QSize(270, 240))
+        self.assertEqual(self.pet.scale_percent, 100)
+        expanded = self.pet.geometry()
+        self.pet.start_transform()
+        self.assertEqual(self.pet.geometry(), expanded)
+        with patch.object(self.pet._transform_clock, "elapsed", return_value=4800):
+            self.pet._on_transform_tick()
+        self.assertEqual(self.pet.geometry(), original)
+        self.assertIsNone(self.pet._transform_geometry)
+
+    def test_expanded_group_stays_on_screen_and_scale_changes_restore(self):
+        bounds = self.app.primaryScreen().availableGeometry()
+        for scale in (50, 100, 300):
+            self.pet.set_scale_percent(scale)
+            for position in (bounds.topLeft(), bounds.bottomRight() - QPoint(self.pet.width() - 1, self.pet.height() - 1)):
+                self.pet.move(position)
+                original = self.pet.geometry()
+                self.pet.start_transform()
+                self.assertTrue(bounds.contains(self.pet.geometry()))
+                self.assertGreater(self.pet.width(), original.width())
+                self.pet.start_idle()
+                self.assertEqual(self.pet.geometry(), original)
+        self.pet.set_scale_percent(100)
+        self.pet.start_transform()
+        self.pet.set_scale_percent(200)
+        self.assertFalse(self.pet._transforming)
+        self.assertEqual(self.pet.size(), QSize(360, 320))
+        self.pet._stop_transform()
+        self.assertEqual(self.pet.size(), QSize(360, 320))

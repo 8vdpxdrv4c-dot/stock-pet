@@ -5,6 +5,7 @@ import sys
 import shutil
 
 import credential_store
+from app_paths import user_data_dir
 
 
 def _get_base_dir():
@@ -16,6 +17,8 @@ def _get_base_dir():
 BASE_DIR = getattr(sys, "_MEIPASS", _get_base_dir())
 CONFIG_PATH = (os.path.join(os.environ.get("APPDATA", os.path.expanduser("~")), "StockPet", "config.json")
                if getattr(sys, "frozen", False) else os.path.join(BASE_DIR, "config.json"))
+if sys.platform == "darwin" and getattr(sys, "frozen", False):
+    CONFIG_PATH = str(user_data_dir() / "config.json")
 ASSETS_DIR = os.path.join(BASE_DIR, "assets")
 DEFAULT_SPEECH_TEXT = "主人，记得喝水哦~喵"
 RETIRED_KEYS = ("check_interval_minutes", "discipline")

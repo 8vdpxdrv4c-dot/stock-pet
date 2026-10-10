@@ -1,0 +1,13 @@
+Source: user-provided 猫吃东西动作视频生成 (1).mp4
+Preserved video: videos/recycle-walking-source.mp4
+Frames: recycle-walking-video/walk_000.png through walk_096.png
+Frame rate: 24 fps, played with a 42 ms Qt timer.
+Processing: ffmpeg scales the video to 640x360; rembg u2netp removes the background.
+One shared crop for all frames preserves the original movement and proportions.
+The app mirrors cached frames for travel to the left.
+Only the trip to and from the recycle bin uses these frames.
+
+Rebuild helper: scripts/build_recycle_walking.py
+Extract source frames first with ffmpeg into build/recycle-video-frames/frame_%03d.png
+using -vf fps=24,scale=640:360. The helper uses rembg[cpu] installed under
+build/video-tools and downloads its model into build/video-models.

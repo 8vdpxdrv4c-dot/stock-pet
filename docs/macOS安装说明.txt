@@ -1,0 +1,19 @@
+StockPet · macOS 安装说明
+
+1. Apple 芯片（M1/M2/M3/M4 等）选择 arm64 版；Intel 芯片选择 x86_64 版。
+2. 打开 DMG，将 StockPet.app 拖到 Applications（应用程序）文件夹。
+3. 在应用程序文件夹中启动 StockPet，首次启动填写自己的 DeepSeek API Key。
+4. 本包采用本地签名，尚未使用 Apple Developer 证书签名或经过公证。
+   若 macOS 阻止打开，请先尝试启动一次，再到系统设置 > 隐私与安全性中允许打开。
+   对于公司管理的 Mac，请遵循管理员设置。
+
+猫咪右键菜单和菜单栏图标可打开聊天、设置及退出。
+配置、待办、记忆和启动日志保存在：
+~/Library/Application Support/StockPet/
+API Key 优先保存到 macOS 钥匙串；系统凭据存储不可用时使用原有本地兜底。
+登录自动启动请先将应用安装到 Applications，再在设置中勾选；下一次登录生效。
+移动应用后请重新关闭并开启登录自动启动，以更新路径。
+
+macOS 版包含动画、聊天、知识库、长期记忆、待办和提醒。
+清空 Windows 回收站和 Windows 全局键盘动作监听不在 macOS 版启用。
+退出不会删除自己的设置和记录。

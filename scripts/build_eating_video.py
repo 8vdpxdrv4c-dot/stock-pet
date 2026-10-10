@@ -23,6 +23,7 @@ from PIL import Image
 import numpy as np
 from scipy.ndimage import binary_erosion, binary_fill_holes
 from rembg import new_session, remove
+from alpha_cleanup import suppress_ground_reflections
 
 
 def main():
@@ -37,6 +38,10 @@ def main():
                         help="Suppress isolated alpha-mask changes using adjacent frames")
     parser.add_argument("--solid-interior", action="store_true",
                         help="Restore opaque cat/bowl interiors and their original source colours")
+    parser.add_argument("--ground-alpha-band", nargs=2, type=int, metavar=("START", "FULL"),
+                        help="Suppress low-confidence floor reflections within a reviewed source-pixel band")
+    parser.add_argument("--shared-crop", nargs=4, type=int, metavar=("LEFT", "TOP", "RIGHT", "BOTTOM"),
+                        help="Keep a reviewed crop to preserve an existing animation's placement and scale")
     args = parser.parse_args()
     if not args.ffmpeg:
         parser.error("Pass --ffmpeg with an ffmpeg executable path")
@@ -72,15 +77,18 @@ def main():
         if i % 16 == 0 or i == len(paths) - 1:
             print(f"Background removed: {i + 1}/{len(paths)}", flush=True)
     rendered = matted
-    if args.stabilize_alpha or args.solid_interior:
+    if args.stabilize_alpha or args.solid_interior or args.ground_alpha_band:
         rendered = work / (f"processed-alpha-{len(paths)}"
-                           f"-median{int(args.stabilize_alpha)}-solid{int(args.solid_interior)}")
+                           f"-median{int(args.stabilize_alpha)}-solid{int(args.solid_interior)}"
+                           + (f"-ground{args.ground_alpha_band[0]}-{args.ground_alpha_band[1]}"
+                              if args.ground_alpha_band else ""))
         rendered.mkdir(parents=True, exist_ok=True)
         for i, path in enumerate(paths):
             # Filter only transparency; retain each source frame's RGB and motion.
             # Wrap neighbours at the chosen loop cut so its edges stay stable too.
             with Image.open(matted / path.name) as frame:
                 alpha = np.array(frame.getchannel("A"))
+            original_matte = alpha.copy()
             if args.stabilize_alpha:
                 neighbours = []
                 for index in ((i - 1) % len(paths), (i + 1) % len(paths)):
@@ -96,6 +104,8 @@ def main():
                 # interior, leaving three source pixels of soft outer edging.
                 interior = binary_erosion(binary_fill_holes(alpha >= 20), iterations=3)
                 alpha = np.where(interior, 255, alpha).astype(np.uint8)
+            if args.ground_alpha_band:
+                alpha = suppress_ground_reflections(alpha, original_matte, args.ground_alpha_band)
             # Recover actual source colours as well as opacity: the rembg RGBA
             # can have darkened RGB where it incorrectly removed a pale leg.
             with Image.open(path) as source_frame:
@@ -115,6 +125,11 @@ def main():
     # One crop and one scale for the entire clip preserve its real movement.
     crop = (max(0, min(b[0] for b in bounds) - 4), max(0, min(b[1] for b in bounds) - 4),
             min(width, max(b[2] for b in bounds) + 4), min(height, max(b[3] for b in bounds) + 4))
+    if args.shared_crop:
+        left, top, right, bottom = args.shared_crop
+        if not (0 <= left < right <= width and 0 <= top < bottom <= height):
+            parser.error("--shared-crop must fit within the source image")
+        crop = tuple(args.shared_crop)
     size, padding = 360, 8
     for i, path in enumerate(paths):
         with Image.open(rendered / path.name) as frame:

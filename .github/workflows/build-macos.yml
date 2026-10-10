@@ -1,0 +1,55 @@
+name: Build macOS
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ['codex/macos-*']
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-15
+            arch: arm64
+          - runner: macos-15-intel
+            arch: x86_64
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          architecture: ${{ matrix.arch == 'arm64' && 'arm64' || 'x64' }}
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Check compatibility
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: |
+          python -m unittest discover -s tests -p test_macos_compatibility.py
+          python -m unittest discover -s tests -p test_settings_dialog.py
+          python -m unittest discover -s tests -p test_packaging.py
+      - name: Build app, smoke-test, and create DMG
+        run: python build_macos.py --python "$(command -v python)"
+      - name: Upload installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: StockPet-macOS-${{ matrix.arch }}
+          path: dist/macos/${{ matrix.arch }}/*.dmg
+          if-no-files-found: error
+          retention-days: 30
+      - name: Upload diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: macOS-diagnostics-${{ matrix.arch }}
+          path: |
+            build-macos.log
+            ~/Library/Application Support/StockPet/app.log
+            build/macos/pyinstaller/**/warn-*.txt

@@ -1,0 +1,20 @@
+{
+  "source": "../videos/eating-source-v4.mp4",
+  "source_sha256": "fdb098ecbd29e659aae2e0f6a5890ddbb9a44242d37d05c105506bd2586de505",
+  "original_filename": "猫吃东西动作视频生成 (2).mp4",
+  "frame_count": 97,
+  "fps": 24,
+  "timer_interval_ms": 42,
+  "canvas_size": [
+    360,
+    360
+  ],
+  "shared_crop": [
+    77,
+    8,
+    720,
+    718
+  ],
+  "padding": 8,
+  "processing": "u2netp alpha mask; shared crop/scale; source frame order; no generated in-between frames"
+}

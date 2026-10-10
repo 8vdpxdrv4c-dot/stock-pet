@@ -80,3 +80,16 @@ class DragPlayTests(unittest.TestCase):
         self.assertIsNone(self.pet._dock_edge)
         self.assertFalse(self.pet._peek_timer.isActive())
         self.assertTrue(self.pet._drag_animating)
+
+    def test_dragging_enlarged_transform_restores_size_and_pointer_anchor(self):
+        original_size = self.pet.size()
+        self.pet.start_transform()
+        origin = self.pet.pos() + QPoint(self.pet.width() // 2, self.pet.height() // 2)
+        target = origin + QPoint(40, 0)
+        self.send_mouse(QEvent.MouseButtonPress, origin, Qt.LeftButton, Qt.LeftButton)
+        self.send_mouse(QEvent.MouseMove, target, Qt.NoButton, Qt.LeftButton)
+        self.assertFalse(self.pet._transforming)
+        self.assertTrue(self.pet._drag_animating)
+        self.assertEqual(self.pet.size(), original_size)
+        self.assertEqual(self.pet.mapFromGlobal(target), QPoint(original_size.width() // 2, original_size.height() // 2))
+        self.send_mouse(QEvent.MouseButtonRelease, target, Qt.LeftButton, Qt.NoButton)

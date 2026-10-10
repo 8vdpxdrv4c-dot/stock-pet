@@ -1,0 +1,20 @@
+{
+  "source": "../videos/eating-source-v5.mp4",
+  "source_sha256": "aa49df5fc7373f9420ec35232267528a23d2699531cb38c03e2de17793127dc5",
+  "original_filename": "10月2日 (1).mp4",
+  "frame_count": 174,
+  "fps": 60,
+  "timer_interval_ms": 17,
+  "canvas_size": [
+    360,
+    360
+  ],
+  "shared_crop": [
+    119,
+    21,
+    1042,
+    1078
+  ],
+  "padding": 8,
+  "processing": "u2netp alpha mask; shared crop/scale; source frame order; no generated in-between frames"
+}
